@@ -3,14 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://karnikram.github.io/blog/gsoc-2018-progress/</loc>
-    <lastmod>2018-08-12T18:54:49+05:30</lastmod>
+    <loc>http://karnikram.github.io/blog/ethrss/</loc>
+    <lastmod>2019-07-12T18:54:49+05:30</lastmod>
   </url>
   
   <url>
     <loc>http://karnikram.github.io/</loc>
-    <lastmod>2018-08-12T18:54:49+05:30</lastmod>
+    <lastmod>2019-07-12T18:54:49+05:30</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://karnikram.github.io/blog/gsoc-2018-progress/</loc>
+    <lastmod>2018-08-12T18:54:49+05:30</lastmod>
   </url>
   
   <url>
