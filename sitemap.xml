@@ -10,7 +10,6 @@
   <url>
     <loc>http://karnikram.github.io/</loc>
     <lastmod>2019-07-12T18:54:49+05:30</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -30,12 +29,10 @@
   
   <url>
     <loc>http://karnikram.github.io/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>http://karnikram.github.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
