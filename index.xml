@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Karnik Ram | Blog</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 12 Jul 2019 18:54:49 +0530</pubDate>
       
       <guid>http://karnikram.github.io/blog/ethrss/</guid>
-      <description> Coming soon! </description>
+      <description>ETH Robotics Summer School Coming soon! A draft is available here - https://www.notion.so/ETH-Robotics-Summer-School-draft-935b9e17510d43ca86f7c5dd4a8f2ae3</description>
     </item>
     
     <item>
@@ -29,9 +29,8 @@
       <description>This blog post chronicles my progress in working towards a GUI application for the automatic extrinsic calibration of range and visual sensors with Mobile Robot Programming Toolkit (MRPT) as a part of Google Summer of Code 2018.
 Project mentors: Eduardo Fernandez-Moral, Jose Luis Blanco-Claraco, Hunter Laux
 Project repository: autocalib-sensor-extrinsics
-
 Student Application Period March 12th - March 27th
-When the official list of participating organizations was accounced for this year&amp;rsquo;s program I was really excited to find MRPT&amp;rsquo;s project idea for a complete GUI app for extrinsic calibration.</description>
+When the official list of participating organizations was accounced for this year&#39;s program I was really excited to find MRPT&#39;s project idea for a complete GUI app for extrinsic calibration.</description>
     </item>
     
     <item>
@@ -40,7 +39,7 @@ When the official list of participating organizations was accounced for this yea
       <pubDate>Sun, 03 Sep 2017 18:58:10 +0530</pubDate>
       
       <guid>http://karnikram.github.io/blog/lie/</guid>
-      <description>Motivation In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone&amp;rsquo;s camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene.</description>
+      <description>Motivation In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone&#39;s camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene.</description>
     </item>
     
   </channel>
