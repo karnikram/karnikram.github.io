@@ -41,7 +41,7 @@
 <meta itemprop="description" content="A summary of my experience as a paricipant">
 <meta itemprop="datePublished" content="2019-07-12T18:54:49&#43;05:30" />
 <meta itemprop="dateModified" content="2019-07-12T18:54:49&#43;05:30" />
-<meta itemprop="wordCount" content="2566">
+<meta itemprop="wordCount" content="2639">
 
 
 
@@ -98,7 +98,7 @@
 <p>I'd never travelled abroad before, let alone attend a summer school, so I started with the formalities early. I had to apply for a Schengen visa, and though the entire process was clearly explained online, the process was still quite arduous with so many different documents to arrange for and keep track of. It took me about 10 days just to submit my application packet, but the turn-around time was quick - my visa was approved and was door-delivered in under three days.</p>
 <p><strong>(About installation and setup.)</strong></p>
 <p>I also spent some time reading/reviewing the papers of the researchers and students organizing the summer school in case I got the chance to discuss with them more about their work and have any lingering doubts cleared. Some colleagues who'd attended conferences before also advised me to print out contact cards and resumes to hand out to people. I got them printed but I didn't like that I was getting too formal so I ditched them in the last minute.</p>
-<p>I reached Zurich on the 26th of June, one day earlier than the itinerary because I booked the wrong flight ticket. But it turned out to be a happy accident since it gave me some extra time to explore the city. The city was really beautiful and clean, and with a very efficient transportation system. I got to take the famous Polybahn express to ETH and roamed around the campus. I also roamed around Bahno, a, b, and did some window shopping. Zurich is generally a very expensive city but I found the electronics to be relatively cheap. I later spent the night at a friend's place. The people were generally very polite and friendly, everyone greets you with a smile, something which is hard to do in India without being misunderstood.</p>
+<p>I reached Zurich on the 26th of June, one day earlier than the itinerary because I booked the wrong flight ticket. But it turned out to be a happy accident since it gave me some extra time to explore the city. The city was really beautiful and clean, and with a very efficient transportation system. I got to ride the famous Polybahn to ETH and then roamed around the campus. I also roamed around the busy places like Bahnhofplatz, Bahnhofstrasse, Rennweg, among other places and did some window shopping. Zurich is generally a very expensive city but I found the electronics to be relatively cheap. I later spent the night at a friend's place. The people were generally very polite and friendly, everyone greets you with a smile, something which is hard to do in India without being misunderstood.</p>
 <div id="images">
 <figure>
 <a href="/images/ethrss/zurich-collage-1.jpeg"><img src="/images/ethrss/zurich-collage-1.jpeg" alt="zurich-collage-1.jpeg" width="550"/></a>
@@ -118,7 +118,7 @@
 <a href="/images/ethrss/demos.jpeg"><img src="/images/ethrss/demos.jpeg" alt="demos.jpeg" width="550"/></a>
 </figure>
 </div>
-<p>At the end of the day we also had a mixer dinner event where we got to interact with all the researchers and students who'd come for the symposium, as well as the other participants of the summer school. The mixer was quite fun, and a memorable moment for me was interacting with Sanjiv Singh and listening to his story about how he landed in the US and in robotics research almost by chance. Some students also formed groups and went for a swim in the Zurich river but by that point I'd already reached my socializing limits so I checked into the hostel and crashed early.</p>
+<p>At the end of the day we also had a mixer dinner event where we got to interact with all the researchers and students who'd come for the symposium, as well as the other participants of the summer school. The mixer was quite fun, and a memorable moment for me was interacting with Sanjiv Singh and listening to his story about how he landed in the US and in robotics research almost by chance. Some students also formed groups and went for a swim in Lake Zurich but by that point I'd already reached my socializing limits so I checked into the hostel and crashed early.</p>
 <div id="images">
 <figure>
 <a href="/images/ethrss/mixer.jpeg"><img src="/images/ethrss/mixer.jpeg" alt="mixer.jpeg" width="550"/></a>
@@ -139,7 +139,7 @@
 </figure>
 </div>
 <h3 id="day-zero">Day zero</h3>
-<p>The summer school officially kicked-off on the evening of the 28th, with Cesar briefing us about our plan for the next three days and the final challenge. There were going to be lectures and hands-on tutorials on state estimation, mapping, path planning, trajectory optimization, and object detection. At the end of all of this there was going to be a team challenge for which we had to program a ground robot, based on the tutorials, to perform an inspection task in a disaster-response scenario.</p>
+<p>The summer school officially kicked-off on the evening of the 28th, with Cesar briefing us about our plan for the next three days and the final challenge. There were going to be lectures and hands-on tutorials on state estimation, mapping, path planning, trajectory optimization, and object detection. At the end of all of this there was going to be a team challenge for which we had to program a ground robot, based on the tutorials, to perform an inspection task in a hypotethical disaster-response scenario.</p>
 <p>We were split into eight teams, and there were four ground robots to work on. The ground robot was a SuperMegaBot (SMB) made by Inspectorbots. The robot was fitted with a RS-LiDAR-16, a RealSense D435, a custom VI sensor, and a custom battery switching circuit and emergency-stop circuit. We spent the evening of our first day getting familiar with our robots and setting up all the ROS software packages on our laptops that we were going to need for the tutorials. The robots were already fully setup. I was in a team with five other members - Emilk, Yimeng, Alfredo, Alex, and Maria. We named our team Wangen Warriors and our robot Rambo. Yes, we were there to fight!</p>
 <div id="images">
 <figure>
@@ -149,18 +149,17 @@
 <h3 id="day-one">Day one</h3>
 <p>The day started at 9AM with a lecture by Timothy Sandy on state estimation. He introduced his ConFusion sensor fusion framework that's specialized for time-critical state estimation for robot platforms such as ours that have multiple sensors. He then also gave a tutorial to get us familiar with his package and asked us to explore how to compensate for the latencies more effectively in order to generate smooth state estimates.</p>
 <p>We then had a lecture by Margarita Chli on simultaneous localization and mapping (SLAM). She gave us a good overview of the SLAM problem - the different ways it is formulated, the different parts of a typical SLAM pipeline, and what is the state of the art today. She also spoke about the research her lab, V4RL, conducts in this area such as collaborative SLAM which were quite interesting. This was followed by a tutorial in which Abel and Lorenz got us familiar with the ICP Mapper and Elevation Mapping packages for generating maps using LiDAR data, and they also gave us further directions to experiment with them.</p>
-<p>We spent the rest of the evening trying to complete the tutorial exercises for the day. We then tried to get things to run on the robot directly and recorded a few ROS bagfiles for offline experimentation. It was quite fun to work as a team, something I don't get to do often during research, and we stayed at the facility till midnight.</p>
+<p>We spent the rest of the evening trying to complete the tutorial exercises for the day. We then tried to get things to run on the robot directly and recorded a few ROS bagfiles for offline experimentation. It was quite fun to work as a team, something I don't get to do often during my research, and we ended up staying at the facility till midnight.</p>
 <div id="images">
 <figure>
 <a href="/images/ethrss/day1.jpeg"><img src="/images/ethrss/day1.jpeg" alt="day1.jpeg" width="550"/></a>
 </figure>
 </div>
 <h3 id="day-two">Day two</h3>
-<p><strong>(Needs heavy editing)</strong></p>
-<p>It was my turn to help with the breakfast preparation today which turned out to be bad for the lectures since I reached the training facility late and also sleep deprived. Nicholos Lawrence and Luca Bartolomei first gave us a lecture on motion planning, which was an extensive overview of the different approaches to motion planning - graph-based, sampling-based, potential-field based - and they followed it up with a tutorial.</p>
+<p>I had to wake up extra early today, at about 6:30 AM, since it was my turn to help with the breakfast preparation. I also had to stay back longer to help with the cleaning, so I ended up reaching the facility both late and sleep deprived. Nicholos Lawrence and Luca Bartolomei first gave us a lecture on motion planning. It was an extensive overview of the different approaches to motion planning - graph-based, sampling-based, potential-field based - and they followed it up with a tutorial.</p>
 <p>We then had a short lecture and tutorial by Farhod Farshidian where he introduced the trajectory optimization problem, or the &ldquo;optimization-based control&rdquo; problem as he liked to call it. He gave an overview of the different methods but focused specifically on MPC. The tutorial task was to run the MPC-based planner in simulation and tune the gain but this part totally went over my head. At this point we decided to split</p>
-<p>After lunch there were two social events planned. We first went to a rope park, Seilpark Balmberg, which was a lot of fun. We then had dinner at the Mittlerer Balmberg restaurant where for the first time in the trip I managed to get proper vegan food!</p>
-<p>After dinner some of us came back to the training facility to work on our robots and getting it ready for the challenge till midnight.</p>
+<p><strong>(TODO)</strong></p>
+<p>After lunch there were two social events planned. We first went to a rope park, Seilpark Balmberg, which was a lot of fun. We then had dinner on the way back at the Mittlerer Balmberg restaurant where for the first time in the trip I managed to get proper vegan food! After dinner some of us came back to the training facility to continue to work on our robots and getting it ready for the challenge till midnight.</p>
 <div id="images">
 <figure>
 <a href="/images/ethrss/day2.jpeg"><img src="/images/ethrss/day2.jpeg" alt="day2.jpeg" width="550"/></a>
@@ -168,12 +167,12 @@
 </div>
 <h3 id="day-three">Day three</h3>
 <p><strong>(Needs heavy editing.)</strong></p>
-<p>On the morning of the final day of the summer school, a lecture on visual recognition by Cesar was scheduled, but in order to give us more time to work on our robots, this was cancelled and we instead only had a tutorial. The tutorial was on the Maplab framework, and object detection, and was given by Andrei Cramariuc and Florian Tschopp.</p>
+<p>On the morning of the final day of the summer school, a lecture on visual recognition by Cesar was originally scheduled, but in order to give us more time to work on our robots, this was cancelled and we instead only had one tutorial. The tutorial was on the Maplab framework, and object detection, and was given by Andrei Cramariuc and Florian Tschopp. We then worked on our robots till lunch after which the trials for the challenge started.</p>
 <p><strong>Challenge</strong></p>
-<p>The task for the challenge was to program our robot to safely enter a closed building, identify and map any objects or victims inside, and exit. All the objects were with equipped with AprilTags, to simply our task, and each team was given roughly one hour to perform this operation. The scoring was based on the extent of autonomous navigation - fully autonomous (no operator involved), navigation via operator defined waypoints, or fully manual (teleoperation) - the quality of the 3D map obtained, the number of objects identified from the scene, and the operation time.</p>
-<p>Though in principle this task seemed easy, since we were already given all the code and packages we need during the tutorials, putting them all together as one system proved to be very difficult. In our team's case, the VI-sensor kept failing for different reasons and even when it worked the estimator quickly accumulated a lot of drift which made all the downstream tasks like planning impossible. We weren't able to fix any of these issues in time and there was also a rain delay just before the challenge which took away some precious testing time. So when our turn came, we manually drove the robot until the entrance of the building, and while inside we sort of just hoped our programs would work. It didn't, so we switched to manual operation but even then the detector failed.</p>
-<p>The other teams too faced similar issues but they decided to go with complete teleoperation, including the detection. Some teams even used their 4G-connected phones to extend their range of operation. One team was able to find all the objects that way, and they ended up with the maximum points and eventually won the challenge.</p>
-<p>At the end of the day we had the closing party where the prizes and certificates were distributed, and some concluding remarks were made. Then there was some social time with music and snacks, but I was quite sleep-deprived at this point and with a bad headache so I left the facility early to catch up on some sleep.</p>
+<p>The task for the challenge was to program our robot to safely enter a closed building, identify and map any objects or dummy victims inside, and exit. All the objects were equipped with AprilTags, to simply our task, and each team was given roughly one hour to perform this operation. The scoring was based on the extent of autonomous navigation - fully autonomous (no operator involved), navigation via operator defined waypoints, or fully manual (teleoperation) - the quality of the 3D map obtained, the number of objects identified from the scene, and the operation time.</p>
+<p>Though in principle this task seemed easy since we were already given all the code and packages we need during the tutorials, putting them all together as one system proved to be very difficult. In our team's case, the VI-sensor kept failing for different reasons and even when it worked the estimator quickly accumulated a lot of drift which made all the downstream tasks like planning impossible. We weren't able to fix any of these issues in time and there was also a rain delay just before our trial which took away some precious testing time. So when our turn came, we manually drove the robot until the entrance of the building, and once inside we sort of just hoped our programs would work. It didn't, so we switched to manual operation but even then our detector failed.</p>
+<p>The other teams too faced similar issues but they decided to go with complete teleoperation, including the detection. Some teams even used their 4G-connected phones to extend their range of operation. One team was able to find all the objects that way, and they ended up with the maximum points and eventually won the challenge. Our take away was that robot system integration and testing is a science in itself and needs a lot of dedicated time.</p>
+<p>At the end of the day we then had the closing party where prizes and certificates were distributed, and some concluding remarks were made. Then there was also some social time with music and snacks, but I was already quite sleep-deprived at this point and with a bad headache so I left the facility early to catch up on some sleep.</p>
 <div id="images">
 <figure>
 <a href="/images/ethrss/day3.jpeg"><img src="/images/ethrss/day3.jpeg" alt="day3.jpeg" width="550"/></a>
@@ -188,7 +187,7 @@
 </div>
 <p><strong>(About our work at ARCHE..)</strong></p>
 <h2 id="züri-fäscht">Züri Fäscht</h2>
-<p>The end of the summer school also happened to nicely coincide with Züri Fäscht (Zurich Fest), the city-wide festival that happens only once in three years. The city turned into one big party for three days, July 6th - 8th, with many concerts, shows, and food stalls setup all around the city center.</p>
+<p>The end of the summer school also happened to nicely coincide with Züri Fäscht (Zurich Fest), a three-day city-wide festival that happens only once in three years. The city turned into one big party for these three days, July 6th - 8th, with many concerts, shows, and food stalls setup all around the city center.</p>
 <p><strong>(About time at the fest and departure..)</strong></p>
 <div id="images">
 <figure>
