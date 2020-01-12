@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Karnik Ram">
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.62.2" />
 <title>Lie Groups and Lie Algebra</title>
 <link rel="shortcut icon" href="http://karnikram.github.io/images/favicon.ico">
 <link rel="stylesheet" href="http://karnikram.github.io/css/style.css">
@@ -41,7 +41,7 @@
 <meta itemprop="description" content="Useful mathematical tool for optimization on manifolds">
 <meta itemprop="datePublished" content="2017-09-03T18:58:10&#43;05:30" />
 <meta itemprop="dateModified" content="2017-09-03T18:58:10&#43;05:30" />
-<meta itemprop="wordCount" content="1146">
+<meta itemprop="wordCount" content="1438">
 
 
 
@@ -87,27 +87,77 @@
 <p>In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone's camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene. The motion of a camera is typically modeled as a rigid body motion (simply a rotation and a translation, more formally called a Special Euclidean Transformation in \(SE(3)\)), a topic which has been studied extensively.</p>
 <p>A rigid body motion can be represented in multiple ways and our choice of representation is closely tied to the application. For instance, the 3D + YPR representation is a popular choice in aerial robotics but not so much outside of it because of its <a href="https://www.reddit.com/r/askscience/comments/27tacb/what_is_gimbal_lock_as_it_pertains_to_spacecraft/">famous</a> gimbal lock problem.</p>
 <p>The following is a more widely used representation, called the homogeneous matrix representation, that allows us to represent motion as a linear transformation.</p>
-<!-- raw HTML omitted -->
+<div>
+\[
+T =     
+\left[
+    \begin{array}{ccc|c}
+     & & & x\\
+     & R & & y\\
+     & & & z\\
+     \hline
+    0 & 0 & 0 & 1
+    \end{array}
+\right]
+\]
+</div>
 <p>where \(R\) is a 3 x 3 rotation matrix (more formally called a Special Orthogonal Transformation in \(SO(3)\))</p>
-<!-- raw HTML omitted -->
+<div>
+\[
+    R = \left[
+                \begin{array}{ccc}
+                    r_{11} & r_{12} & r_{13} \\
+                    r_{21} & r_{21} & r_{23} \\
+                    r_{31} & r_{32} & r_{33} \\
+                \end{array}
+        \right]
+\]
+</div>
 <p>However, such a representation is actually a bit &lsquo;nasty&rsquo; to work with. The rotation matrix \(R\) is a part of a non-linear space, and even though rotations only present three degrees of freedom, there are nine parameters for rotation in this representation, constrained by \(R^\top(t)R = I\) and det(\(R\)) = +1. So if we were to estimate the motion of a camera over multiple images, we'll have to estimate nine parameters for the rotation alone and that would have to be solved for as a constrained optimization problem which can be very tedious to implement.</p>
 <p>The theory of Lie groups and their corresponding algebra presents us with a much nicer lower-dimensional linear representation for rigid body motion, one which is increasingly being used in computer vision these days. In this post I'll discuss about the conceptual model of Lie groups and Lie algebra, the rough knowledge that is needed in order to use it effectively in computer vision problems.</p>
 <hr>
 <h2 id="lie-parameterization-of-rotations">Lie Parameterization of Rotations</h2>
 <p>Consider a rotational trajectory \(R(t) : \mathbb{R} \rightarrow SO(3)\) representing the rotational motion of a camera, where SO(3) is the set of all rotation matrices.</p>
-<!-- raw HTML omitted -->
+<div>
+\[
+    SO(3) \stackrel{.}{=} \left\{ 
+        R \in \mathbb{R}^{3x3}
+        \;|\; R^{T}R = I, det(R) = +1
+        \right\}
+\]
+</div>
 <p>We know by definition,</p>
-<!-- raw HTML omitted -->
+<div> 
+$$ R(t)R(t)^{\top} = I$$
+Computing its derivative with respect to time \(t\), we get
+$$ \dot{R}(t)R^\top(t) + R(t)\smash{\dot{R}}^\top(t) = 0 $$
+$$ \Rightarrow\dot{R}(t)R^\top(t) = -(\dot{R}(t)R^\top(t))^\top $$
+The resulting equation shows that \(\dot{R}(t)R^\top(t)\) is a skew-symmetric matrix, which implies that there must exist a vector \(w(t)\in \mathbb{R}^3\) such that
+$$ \dot{R}(t)R^\top(t) = \hat{\omega}(t) \Leftrightarrow\dot{R}(t) = \omega(t)R(t) $$
+Now if \(R(t_0) = I\), we have \(\dot{R}(t_0) = \hat{\omega}(t_0)\) and so a Taylor series approximation of \(R(t)\) about \(t = t_0\) would result in
+$$ R(t_o + dt) \approx I_o + \hat{\omega}(t_o)dt $$
+</div>
 <p>What this means is that <em>infinitesimal</em> rotations around the identity are locally only dependent on the three dimensional \((\omega_1,\omega_2,\omega_3)\) space of skew symmetric matrices, also called the <em>tangent space</em>.  This tangent space at the identity is more formally defined as the <strong>Lie algebra</strong> \(so(3)\) of the <strong>Lie group</strong> \(SO(3)\).</p>
-<!-- raw HTML omitted -->
+<div>
+$$ so(3) \stackrel{.}{=} \\{ \hat{\omega} \in \mathbb{R}^{3 x 3} \;|\; \omega \in \mathbb{R}^{3}\\} $$
+</div>
 <p>This tangent space is a linear space with three degrees of freedom and no additional constraints which makes it much easier to work with than its corresponding lie group for motion estimation and optimization problems. This allows us to model rotations as skew-symmetric matrices with three free parameters.</p>
 <hr>
-<!-- raw HTML omitted -->
+<div id="images">
+<figure>
+<img src="/images/lie.png"/>
+<figcaption>Visual representation of the relationship between the linear tangent space so(3) and the non-linear Lie group SO(3).<br/>Image source:<a href="https://github.com/ankurhanda/gvnn"> Handa et al.</a></figcaption>
+</figure>
+</div>
 <hr>
 <h2 id="the-exponential-map">The Exponential Map</h2>
 <p>We shall now try to formulate the mapping that will allow us to represent elements of the lie group \(SO(3)\) in terms of its lie algebra \(so(3)\).</p>
 <p>From the above discussion we know,</p>
-<!-- raw HTML omitted -->
+<div>
+\\[
+    \dot{R}(t) = \hat{\omega}R(t)\,,\,R(t_o) = I
+\\]
+</div>
 <p>This is a linear ordinary differential equation with inital state at \(I\), whose solution is given by</p>
 <p>\[
 \boxed{R(t) = e^{\hat{\omega}t}}
@@ -122,13 +172,18 @@ e^{\hat{\omega}t} = I + \hat{\omega}t + \frac{(\hat{\omega}t)^2}{2!} + \frac{(\h
 exp: so(3) \rightarrow SO(3); ; \hat{\omega} \mapsto e^{\hat{\omega}}
 \]</p>
 <p>A closed-form expression for actually computing the exponential map is given by the Rodrigues&rsquo; formula,</p>
-<!-- raw HTML omitted -->
+<div>
+   \[
+       \boxed{ 
+            e^{\hat{\omega}} = I + \frac{\hat{\omega}}{\Vert{\omega}\Vert}\sin{\Vert{\omega}\Vert} + \frac{\hat{\omega}^2}{\Vert{\omega}\Vert^2}(1 - \cos(\Vert\omega\Vert))
 <pre><code>   }
 \]
 </code></pre>
-<!-- raw HTML omitted -->
+</div>
 <p>We have an inverse to this exponential map, given by the logarithm, that'll allow us to take an element from the Lie group to the Lie algebra. In this case, a rotation matrix to its skew symmetric matrix. If \(R \neq I\), then</p>
-<!-- raw HTML omitted -->
+<div>
+\[
+   \boxed{\Vert{\omega}\Vert = \cos^{-1}\left(\frac{trace(R) - 1}{2}\right), \; 
 <p>\frac{\omega}{\Vert{\omega}\Vert} = \frac{1}{2\sin{(\Vert{\omega}\Vert)}}
 \left[
 \begin{array}{c}
@@ -138,18 +193,56 @@ r_{21} - r_{12}
 \end{array}
 \right]}
 ]</p>
-<!-- raw HTML omitted -->
-<p>If \(R = I\) then, \(\Vert{\omega}\Vert = 0\) and the axis is not defined.<!-- raw HTML omitted -->
+</div>
+<p>If \(R = I\) then, \(\Vert{\omega}\Vert = 0\) and the axis is not defined.</br>
 However this representation is not unique since increasing the angle by multiples of \(2\pi\) will give the same \(R\).</p>
 <hr>
 <h2 id="lie-parameterization-of-rigid-body-motion">Lie Parameterization of Rigid Body Motion</h2>
 <p>The ideas that were developed for rotations can be extended to rigid body motion as well. The set of rigid body motions SE(3) has a corresponding Lie algebra se(3), defined as the set of 4 x 4 &lsquo;twist&rsquo; matrices \(\hat{\xi}\)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div>
+\[
+    SE(3) \stackrel{.}{=} \left\{ g = 
+        \begin{pmatrix}
+        R & t\\
+        0 & 1\\
+        \end{pmatrix} 
+        \;|\; R \in SO(3), t \in \mathbb{R}^{3}
+        \right\} 
+        \subset
+        \mathbb{R}^{4x4}
+\]
+</div>
+<div>
+\[
+    se(3) \stackrel{.}{=} \left\{ \hat{\xi} = 
+        \begin{pmatrix}
+        \hat{\omega} & v\\
+        0 & 0\\
+        \end{pmatrix} 
+        \;|\; \hat{w} \in so(3), v \in \mathbb{R}^{3}
+        \right\} 
+        \subset
+        \mathbb{R}^{4x4}
+\]
+</div>
 <p>The twist matrix \(\hat{\xi}\) which consists of a rotational skew-symmetric matrix and a 3D vector, is a tangent vector along some \(g\). \(\hat{\xi}\) can further be simplied to a 6-vector \(\xi\), called the twist coordinates, which is defined as,</p>
-<!-- raw HTML omitted -->
+<div>
+\[
+    \xi = 
+    \begin{pmatrix}
+    v\\
+    \omega\\
+    \end{pmatrix}
+    \in
+    \mathbb{R}^6
+\]
+</div>
 <p>\(v\) is called the linear velocity vector, which is related to the translation vector \(t\) as follows,</p>
-<!-- raw HTML omitted -->
+<div>
+\[
+    {(I - e^{\hat{\omega}})\hat{\omega}v + \omega\omega^{T}v \over \Vert\omega\Vert} = t
+\]
+</div>
 <p>Like we saw in the case of rotations, rigid body transformations can be similarly modeled using its Lie algebra elements \(\hat{\xi}\), and \(\xi\).</p>
 <hr>
 <h2 id="matlab-code">Matlab Code</h2>

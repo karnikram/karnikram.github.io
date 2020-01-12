@@ -53,7 +53,7 @@ margin-bottom: 10px;
 html, body { height: 100%; }
 
 body {
-	font:14px/1 "Lato", Verdana, Helvetica, sans-serif;
+	font:15px/1 "Lato", Verdana, Helvetica, sans-serif;
 	color: #666;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
@@ -325,6 +325,7 @@ img {
 #images{
 	text-align: center;
 	color:#666;
+	padding: 10px
 }
 /* Made with Cactus Badge */
 #badge {
@@ -426,7 +427,7 @@ Post List
 	color: #444;
 	font-weight: 300;
 	display: block;
-	font-size: 10px;
+	font-size: 11px;
 }
 
 #post-meta div span.dark {

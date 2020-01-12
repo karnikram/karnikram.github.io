@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Karnik Ram">
 
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.62.2" />
 <title>Google Summer of Code with MRPT</title>
 <link rel="shortcut icon" href="http://karnikram.github.io/images/favicon.ico">
 <link rel="stylesheet" href="http://karnikram.github.io/css/style.css">
@@ -41,7 +41,7 @@
 <meta itemprop="description" content="A summary of my experience with developing an open source GUI app for the extrinsic calibration of range and visual sensors">
 <meta itemprop="datePublished" content="2018-08-12T18:54:49&#43;05:30" />
 <meta itemprop="dateModified" content="2018-08-12T18:54:49&#43;05:30" />
-<meta itemprop="wordCount" content="3129">
+<meta itemprop="wordCount" content="3160">
 
 
 
@@ -88,17 +88,22 @@
 <a href="https://github.com/EduFdez">Eduardo Fernandez-Moral</a>, <a href="https://github.com/jlblancoc">Jose Luis Blanco-Claraco</a>, <a href="https://github.com/jolting">Hunter Laux</a></p>
 <p>Project repository:
 <a href="https://github.com/karnikram/autocalib-sensor-extrinsics">autocalib-sensor-extrinsics</a></p>
-<!-- raw HTML omitted -->
+<br>
 <h2 id="student-application-period">Student Application Period</h2>
 <p><em>March 12th - March 27th</em></p>
 <p>When the official list of participating organizations was accounced for this year's program I was really excited to find MRPT's project idea for a complete GUI app for extrinsic calibration. I had been working on the extrinsic calibration of 3D LiDARs and cameras for about six months until this point so I could really appreciate the need for such an app. Only a few extrinsic calibration packages are available as open source at this point and they're all mostly just research prototypes. They are not automatic either and still require significant human intervention. A complete GUI app with different automatic extrinsic calibration algorithms integrated into it, that could operate on natural scenes could be very useful and save a lot of efforts. I immediately wanted to start working towards to this project but however I wasn't actually sure if I will be eligible to participate in the program since I wasn't officially enrolled as a student anywhere (yet). But I still proceeded with the idea hoping that that would somehow get sorted out in time.</p>
 <p>I introduced myself to the project mentors and I discussed with them about the deliverables of the project - the different kinds of sensors that the app should be able support and the different algorithms that should be implemented. They wanted virtually all kinds of sensors to be supported - 3D LiDARs, 2D LiDARs, RGB-D cameras and RGB cameras - and three different algorithms - based on plane-matching, line-matching, and trajectory-matching - to be implemented. It seemed very ambitious and I wasn't sure if I could do all of this in three months but they assured me that it can be done. Eduardo, one of the mentors, had co-authored two of the algorithms so he would also be able to help me with the code. With this, I drafted a plan with weekly goals and project milestones, and together with a very minimal GUI skeleton that I coded up using Qt, I submitted my proposal.</p>
 <p>My full project proposal can be found <a href="/papers/gsoc-proposal.pdf">here.</a></p>
 <hr>
-<!-- raw HTML omitted -->
+<div id="images">
+<figure>
+<a href="/images/calib-wireframe.png"><img src="/images/calib-wireframe.png" alt="calib-wireframe.png" width="400"/></a>
+<figcaption> Wireframe of the app proposed </figcaption>
+</figure>
+</div>
 <hr>
 <p>Thankfully, my eligibility eventually got sorted out and my project also got accepted. Now onto the rewarding part!</p>
-<!-- raw HTML omitted -->
+<br>
 <h2 id="community-bonding-period">Community Bonding Period</h2>
 <p><em>April 23rd to May 14th</em></p>
 <p>During the bonding period I wanted to settle into the MRPT community and get comfortable with all its libraries and coding practices and get myself ready for the official coding period.</p>
@@ -107,9 +112,14 @@
 <p>I built the MRPT libraries from source, ran a few examples and in-built apps. I read through some of their API documentation pages and their coding style guide. I also had to configure my Vim and QtCreator to adopt their coding style since they prefer tabs over spaces ;)</p>
 <p>Once I felt reasonably comfortable and settled in, I resumed my work on the GUI which I had started during the application period. I decided to change the layout of the setup widget to distribute more space to the visualization widgets. I also decided to setup a QTreeView for listing all the observations in the dataset as a tree and to interact with them. I added both the widgets as QDockWidgets for more flexibility. The user can now use the app to select the sensor combination to calibrate, the calibration algorithm, and select the dataset to load. The app looks like this:</p>
 <hr>
-<!-- raw HTML omitted -->
+<div id="images">
+<figure>
+<a href="/images/bonding-period.png"><img src="/images/bonding-period.png" alt="bonding-period-status.png" width="400"/></a>
+<figcaption> At the end of the community bonding period </figcaption>
+</figure>
+</div>
 <hr>
-<!-- raw HTML omitted -->
+<br>
 <h2 id="coding-period">Coding period</h2>
 <h3 id="week-1">Week 1:</h3>
 <p><em>May 14th - May 20th</em></p>
@@ -124,7 +134,12 @@
 <p>I then started to work on implementing the plane-matching algorithm for calibration, for which I needed to first implement plane segmentation. Following PbMap as an example, I used PCL's OrganizedMultiPlaneSegmentation method for this but I ran into some type incompatibility issues.</p>
 <p>At the end of week 3 the app looks like this:</p>
 <hr>
-<!-- raw HTML omitted -->
+<div id="images">
+<figure>
+<a href="/images/week-3.png"><img src="/images/week-3.png" alt="week-3-status.png" width="400"/></a>
+<figcaption> At the end of week 3 </figcaption>
+</figure>
+</div>
 <hr>
 <h3 id="week-4">Week 4:</h3>
 <p><em>June 4th to June 10th</em></p>
@@ -154,7 +169,12 @@ Luckily I soon got a reply on the issues thread, turns out the latest PCL binari
 <p>I also tried launching the core algorithms in a separate thread, but that doesn't allow publishing the status messages to the viewer with the current project structure.</p>
 <p>At the end of the second evaluation the app looks like this:</p>
 <hr>
-<!-- raw HTML omitted -->
+<div id="images">
+<figure>
+<a href="/images/week-9.png"><img src="/images/week-9.png" alt="week-9-status.png" width="400"/></a>
+<figcaption> At the end of second phase </figcaption>
+</figure>
+</div>
 <hr>
 <h3 id="week-10">Week 10:</h3>
 <p><em>July 16th to July 22nd</em></p>
@@ -175,7 +195,12 @@ Luckily I soon got a reply on the issues thread, turns out the latest PCL binari
 <p>I then proceeded to gather all the documentation for the final submission, which includes updating this post, with the intention of returning to the code again to fix the solver issues soon.</p>
 <p>At the end of week 13 the app looks like this:</p>
 <hr>
-<!-- raw HTML omitted -->
+<div id="images">
+<figure>
+<a href="/images/week-13.png"><img src="/images/week-13.png" alt="week-13-status.png" width="400"/></a>
+<figcaption> At the end of week 13 </figcaption>
+</figure>
+</div>
 <hr>
 <p><strong>Update:</strong> I failed my final evaluation. So close, yet so far.</p>
 
