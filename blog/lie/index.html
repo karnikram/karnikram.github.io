@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Karnik Ram">
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.64.1" />
 <title>Lie Groups and Lie Algebra</title>
 <link rel="shortcut icon" href="http://karnikram.github.io/images/favicon.ico">
 <link rel="stylesheet" href="http://karnikram.github.io/css/style.css">
@@ -84,7 +84,7 @@
     </header>
     <section id="post-body">
         <h2 id="motivation">Motivation</h2>
-<p>In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone's camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene. The motion of a camera is typically modeled as a rigid body motion (simply a rotation and a translation, more formally called a Special Euclidean Transformation in \(SE(3)\)), a topic which has been studied extensively.</p>
+<p>In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone&rsquo;s camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene. The motion of a camera is typically modeled as a rigid body motion (simply a rotation and a translation, more formally called a Special Euclidean Transformation in \(SE(3)\)), a topic which has been studied extensively.</p>
 <p>A rigid body motion can be represented in multiple ways and our choice of representation is closely tied to the application. For instance, the 3D + YPR representation is a popular choice in aerial robotics but not so much outside of it because of its <a href="https://www.reddit.com/r/askscience/comments/27tacb/what_is_gimbal_lock_as_it_pertains_to_spacecraft/">famous</a> gimbal lock problem.</p>
 <p>The following is a more widely used representation, called the homogeneous matrix representation, that allows us to represent motion as a linear transformation.</p>
 <div>
@@ -113,8 +113,8 @@ T =
         \right]
 \]
 </div>
-<p>However, such a representation is actually a bit &lsquo;nasty&rsquo; to work with. The rotation matrix \(R\) is a part of a non-linear space, and even though rotations only present three degrees of freedom, there are nine parameters for rotation in this representation, constrained by \(R^\top(t)R = I\) and det(\(R\)) = +1. So if we were to estimate the motion of a camera over multiple images, we'll have to estimate nine parameters for the rotation alone and that would have to be solved for as a constrained optimization problem which can be very tedious to implement.</p>
-<p>The theory of Lie groups and their corresponding algebra presents us with a much nicer lower-dimensional linear representation for rigid body motion, one which is increasingly being used in computer vision these days. In this post I'll discuss about the conceptual model of Lie groups and Lie algebra, the rough knowledge that is needed in order to use it effectively in computer vision problems.</p>
+<p>However, such a representation is actually a bit &lsquo;nasty&rsquo; to work with. The rotation matrix \(R\) is a part of a non-linear space, and even though rotations only present three degrees of freedom, there are nine parameters for rotation in this representation, constrained by \(R^\top(t)R = I\) and det(\(R\)) = +1. So if we were to estimate the motion of a camera over multiple images, we&rsquo;ll have to estimate nine parameters for the rotation alone and that would have to be solved for as a constrained optimization problem which can be very tedious to implement.</p>
+<p>The theory of Lie groups and their corresponding algebra presents us with a much nicer lower-dimensional linear representation for rigid body motion, one which is increasingly being used in computer vision these days. In this post I&rsquo;ll discuss about the conceptual model of Lie groups and Lie algebra, the rough knowledge that is needed in order to use it effectively in computer vision problems.</p>
 <hr>
 <h2 id="lie-parameterization-of-rotations">Lie Parameterization of Rotations</h2>
 <p>Consider a rotational trajectory \(R(t) : \mathbb{R} \rightarrow SO(3)\) representing the rotational motion of a camera, where SO(3) is the set of all rotation matrices.</p>
@@ -180,7 +180,7 @@ exp: so(3) \rightarrow SO(3); ; \hat{\omega} \mapsto e^{\hat{\omega}}
 \]
 </code></pre>
 </div>
-<p>We have an inverse to this exponential map, given by the logarithm, that'll allow us to take an element from the Lie group to the Lie algebra. In this case, a rotation matrix to its skew symmetric matrix. If \(R \neq I\), then</p>
+<p>We have an inverse to this exponential map, given by the logarithm, that&rsquo;ll allow us to take an element from the Lie group to the Lie algebra. In this case, a rotation matrix to its skew symmetric matrix. If \(R \neq I\), then</p>
 <div>
 \[
    \boxed{\Vert{\omega}\Vert = \cos^{-1}\left(\frac{trace(R) - 1}{2}\right), \; 
@@ -297,7 +297,7 @@ However this representation is not unique since increasing the angle by multiple
 <span style="color:#66d9ef">end</span>
 </code></pre></div><hr>
 <h2 id="further-reading">Further reading</h2>
-<p>• <a href="https://www.dropbox.com/s/5y3tvypzps59s29/3DGeometry.pdf?dl=0">Tom Drummond's lecture notes on Lie Groups</a></p>
+<p>• <a href="https://www.dropbox.com/s/5y3tvypzps59s29/3DGeometry.pdf?dl=0">Tom Drummond&rsquo;s lecture notes on Lie Groups</a></p>
 <p>• <a href="https://github.com/devbharat/gtsam/blob/master/doc/LieGroups.pdf">Lie Groups for Beginners - Frank Dellaert</a></p>
 <p>• <a href="http://ethaneade.com/lie.pdf">Lie Groups for 2D and 3D Transformations - Ethan Eade</a></p>
 <p>• <a href="https://pixhawk.org/_media/dev/know-how/jlblanco2010geometry3d_techrep.pdf">A tutorial on SE(3) transformation parameterizations and on-manifold optimization - Jose Luis Blanco</a></p>

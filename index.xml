@@ -17,7 +17,7 @@
       <pubDate>Fri, 12 Jul 2019 18:54:49 +0530</pubDate>
       
       <guid>http://karnikram.github.io/blog/ethrss/</guid>
-      <description>The ETH Robotics Summer School (ETHRSS) in an annual two-week summer school for graduate students organized by the Center for Robotics at ETH Zurich. The school is themed around building semi-autonomous robots for search-and-rescue, and it is also co-located with the ETH Robotics Symposium and the Swiss ARCHE (Advanced Robotic Capabilities for Hazardous Environments) week. I had the opportunity to participate in this program this year, which is also its first year, and in this post I&#39;ll try to summarize my whole experience with the program beginning with the application process to my last day at Zurich, in the hope that someone finds it useful and for my own reference.</description>
+      <description>The ETH Robotics Summer School (ETHRSS) in an annual two-week summer school for graduate students organized by the Center for Robotics at ETH Zurich. The school is themed around building semi-autonomous robots for search-and-rescue, and it is also co-located with the ETH Robotics Symposium and the Swiss ARCHE (Advanced Robotic Capabilities for Hazardous Environments) week. I had the opportunity to participate in this program this year, which is also its first year, and in this post I&amp;rsquo;ll try to summarize my whole experience with the program beginning with the application process to my last day at Zurich, in the hope that someone finds it useful and for my own reference.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@
 Project mentors: Eduardo Fernandez-Moral, Jose Luis Blanco-Claraco, Hunter Laux
 Project repository: autocalib-sensor-extrinsics
 Student Application Period March 12th - March 27th
-When the official list of participating organizations was accounced for this year&#39;s program I was really excited to find MRPT&#39;s project idea for a complete GUI app for extrinsic calibration.</description>
+When the official list of participating organizations was accounced for this year&amp;rsquo;s program I was really excited to find MRPT&amp;rsquo;s project idea for a complete GUI app for extrinsic calibration.</description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ When the official list of participating organizations was accounced for this yea
       <pubDate>Sun, 03 Sep 2017 18:58:10 +0530</pubDate>
       
       <guid>http://karnikram.github.io/blog/lie/</guid>
-      <description>Motivation In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone&#39;s camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene.</description>
+      <description>Motivation In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone&amp;rsquo;s camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene.</description>
     </item>
     
   </channel>
