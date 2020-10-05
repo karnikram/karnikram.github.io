@@ -41,7 +41,7 @@
 <meta itemprop="description" content="A summary of the procedure involved in setting up a typical server node in a cluster">
 <meta itemprop="datePublished" content="2020-06-28T18:58:10+05:30" />
 <meta itemprop="dateModified" content="2020-06-28T18:58:10+05:30" />
-<meta itemprop="wordCount" content="2391">
+<meta itemprop="wordCount" content="2430">
 
 
 
@@ -84,7 +84,7 @@
         </h2>
     </header>
     <section id="post-body">
-        <p>The following is something that I wrote as part of our internal documentation for our lab, but I decided to share it here because I&rsquo;ve discussed some neat tools like Environment Modules and Prometheus among others that I think more people will find useful. Another reason is because I haven&rsquo;t posted anything in a while (hashtag content).</p>
+        <p>The following is something that I wrote as part of our internal documentation for our lab, but I decided to share it here because I&rsquo;ve discussed some neat tools like Environment Modules and Prometheus among others that I think more people will find useful. Another reason is because I haven&rsquo;t posted anything in a while (hashtag content). And just to be clear, the hostnames and IPs referenced here will be unreachable as they are internal to our network.</p>
 <hr>
 <p>This document details the process involved in setting up a new compute node, and adding it to the RRC compute cluster. This can be used as reference for sysadmins and users who want to understand how things are setup.</p>
 <p>We assume that all the required hardware is properly installed and discuss only the software setup. We begin with a fresh installation of Ubuntu server 18.04.4 LTS.</p>
@@ -122,11 +122,11 @@ mount -v -t nfs 10.4.18.3:/mnt/rrc/home /home
 <p>Each compute node has attached to it a 1 TB SSD drive (sometimes 2 SSDs configured as a RAID0 drive) meant as low-latency storage for users to work with locally for their I/O operations. To mount this drive, we run the following commands (with the right device file name):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /scratch
 mount /dev/sdb1 /scratch
-</code></pre></div><p>In addition, like before, we add the following line to <code>/etc/fstab</code> (use <code>blkid</code> to identify the right UUID):</p>
+</code></pre></div><p>In addition, like before, we add the following line to <code>/etc/fstab</code> (run <code>blkid</code> to identify the right UUID):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/dev/disk/by-uuid/b63e7654-3442-4eb7-98d4-25e78618d235 /scratch ext4 defaults <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
 </code></pre></div><br>
 <h2 id="software-packages">Software packages</h2>
-<p>Apart from the basic CLI tools already installed in the first step, we try not to install anything using <code>apt</code>. Installing any package often brings with it its own version of system dependencies which can silently break someone else&rsquo;s workflow. These dependencies can also get auto-updated during OS upgrades (if enabled). So we expect users to build any packages that they need locally by themselves, or install from <code>conda-forge</code> if available. That said, we build some commonly used packages from source by ourselves and install them to <code>/opt/</code>. This includes CUDA &amp; cuDNN, Singularity, gcc, and Matlab. However we don&rsquo;t always need to build all these tools. Most of these are statically built, so we can just copy all their files from the <code>/opt</code> directory of another compute node onto this node and things will work just fine.</p>
+<p>Apart from the basic CLI tools already installed in the first step, we try not to install anything using apt install. Installing any package often brings with it its own version of system dependencies which can silently break someone else&rsquo;s workflow. These dependencies can also get auto-updated during OS upgrades (if enabled). So we expect users to build any packages that they need locally by themselves, or install from conda-forge if available. That said, we build some commonly used packages from source by ourselves and install them to <code>/opt/</code>. This includes CUDA &amp; cuDNN, Singularity, gcc, and Matlab. However we don&rsquo;t always need to build all these tools. Most of these are statically built, so we can just copy all their files from the <code>/opt</code> directory of another compute node onto this node and things will work just fine.</p>
 <br>
 <h2 id="environment-modules">Environment Modules</h2>
 <p>We often need to build and manage different versions of the same tool (eg: CUDA), as users work on different projects and have different requirements. The hard way to manage them is to manually change one&rsquo;s PATH variable to point to the right version of the tool each time. The easier way is to use the <a href="%5Bhttps://modules.readthedocs.io/en/latest/index.html%5D(https://modules.readthedocs.io/en/latest/index.html)">Environment Modules</a> package. Modules provides a clean interface for dynamically modifying one&rsquo;s environment variables using modulefiles. This allows easy loading of different versions of a tool or library without having to manually change the PATH variable each time.
@@ -169,7 +169,7 @@ prepend-path   LD_LIBRARY_PATH  $root/lib64
 <p>-<code>clear-storage.sh</code>: Deletes files in the <code>/scratch</code> directory that haven&rsquo;t been accessed in two weeks. The respective owners are also sent a notification one day before.</p>
 <p>-<code>quota-bot.sh</code>: Checks the usage of <code>/scratch</code> directory and if it is greater than 85% of capacity, a limit of 375 GB is set for every user whose usage is greater than 150 GB.</p>
 <p>-<code>daily-mails.sh</code>: Reports files in <code>/tmp</code> that are not owned by root.</p>
-<p>We use SSH to connect to our Github to our repositories. We have a bot account, named rrc-iith, that has access to all the repositories on our RoboticsIIITH organization page. We generate public and private keys using the following command for our system and add the public key to the bot account on Github for authentication.</p>
+<p>We use SSH to connect to our Github repositories. We have a bot account, named rrc-iith, that has access to all the repositories on our RoboticsIIITH organization page. We generate public and private keys for our node using the following command and add the public key to the bot account on Github for access to all the repositories from this node.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -o -a <span style="color:#ae81ff">100</span> -t ed25519 -f ~/.ssh/id_ed25519
 </code></pre></div><p>SSH connections to Github (or any external server) however are blocked within the IIIT network. Fortunately, Github supports SSH connections over the HTTPS port to the ssh.github.com server. To force all connections to Github to run through this server and port, we add the following lines to the <code>~/.ssh/config</code> file:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Host github.com
@@ -216,11 +216,11 @@ curl http://blue.iiit.ac.in:9445/metrics
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install etckeeper
 cd /etc
 etckeeper init
-</code></pre></div><p>To sync it to a remote repository, we create a <em>private</em> repository (blue-etckeeper) on the RoboticsIIITH organization page and give administrative access to the SysAds team. Then we run <code>git remote add origin git@github.com:RoboticsIIITH/blue-etckeeper.git</code> inside the <code>/etc</code> folder, and edit the PUSH_REMOTE option in <code>/etc/etckeeper/etckeeper.conf</code> with the name of the remote - origin. The SSH config for Github needs to be properly setup for this to work, as described earlier.</p>
+</code></pre></div><p>To sync it to a remote repository, we create a <em>private</em> repository (blue-etckeeper) on the RoboticsIIITH organization page and give administrative access to the SysAds team. Then we run <code>git remote add origin git@github.com:RoboticsIIITH/blue-etckeeper.git</code> inside the <code>/etc</code> folder, and edit the <code>PUSH_REMOTE</code> option in <code>/etc/etckeeper/etckeeper.conf</code> with the name of the remote - <code>origin</code>. The SSH config for Github needs to be properly setup for this to work, as described earlier.</p>
 <br>
 <h2 id="disable-auto-upgrades">Disable auto-upgrades</h2>
-<p>The apt package manager periodically updates the package lists to . However, we never intend to install any of these updates as they can easily break someone&rsquo;s workflow. So to disable this we set <code>APT::Periodic::Update-Package-Lists</code> to &ldquo;0&rdquo; in the file <code>/etc/apt/apt.conf.d/20-autoupgrades</code>.</p>
-<p>Moreover, apt also tends to automatically apply any critical security updates. But most of these are updates at the kernel level which require a reboot, so we decided not to install any of these security updates too (!). To disable this we set <code>APT:Periodic::Unattended-Upgrade</code> to &ldquo;0&rdquo; in the same file.</p>
+<p>The apt package manager periodically updates the package lists to . However, we never intend to install any of these updates as they can easily break someone&rsquo;s workflow. So to disable this we set <code>APT::Periodic::Update-Package-Lists</code> to <code>0</code> in the file <code>/etc/apt/apt.conf.d/20-autoupgrades</code>.</p>
+<p>Moreover, apt also tends to automatically apply any critical security updates. But most of these are updates at the kernel level which require a reboot, so we decided not to install any of these security updates too (!). To disable this we set <code>APT:Periodic::Unattended-Upgrade</code> to <code>0</code> in the same file.</p>
 <br>
 <h2 id="ipa-enrolment">IPA enrolment</h2>
 <p>We use a FreeIPA server for user and host identity management, and authentication. To enrol this node as a host to the IPA server we run the following commands:</p>
@@ -261,6 +261,7 @@ iptables -A INPUT -s 10.4.18.7/32 -p tcp -m state --state NEW -m tcp --dport <sp
 iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -j REJECT --reject-with icmp-port-unreachable
 </code></pre></div><br>
+<p>Run <code>iptables -L -v</code> to ensure if it is setup as expected.</p>
 <h2 id="enable-user-access">Enable user access</h2>
 <p>Finally, to enable users (also enrolled on the IPA server) to access this node, we create a new users group (eg: blue) under the <code>Identity → Groups</code> tab of web IPA, and add the users who&rsquo;d like to have access to this node to this group.</p>
 <p>Then we go to the <code>Policy → Host-based Access Control</code> tab and create a new rule (eg: access_blue). Here we specify the name of the users group and the hostname they will get access to, and the default services.</p>

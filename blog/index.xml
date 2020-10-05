@@ -13,8 +13,7 @@
       <pubDate>Sun, 28 Jun 2020 18:58:10 +0530</pubDate>
       
       <guid>https://karnikram.info/blog/node-setup/</guid>
-      <description>The following is something that I wrote as part of our internal documentation for our lab, but I decided to share it here because I&amp;rsquo;ve discussed some neat tools like Environment Modules and Prometheus among others that I think more people will find useful. Another reason is because I haven&amp;rsquo;t posted anything in a while (hashtag content).
- This document details the process involved in setting up a new compute node, and adding it to the RRC compute cluster.</description>
+      <description>The following is something that I wrote as part of our internal documentation for our lab, but I decided to share it here because I&amp;rsquo;ve discussed some neat tools like Environment Modules and Prometheus among others that I think more people will find useful. Another reason is because I haven&amp;rsquo;t posted anything in a while (hashtag content). And just to be clear, the hostnames and IPs referenced here will be unreachable as they are internal to our network.</description>
     </item>
     
     <item>
