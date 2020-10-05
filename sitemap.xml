@@ -3,36 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://karnikram.github.io/blog/ethrss/</loc>
+    <loc>https://karnikram.info/</loc>
+    <lastmod>2020-06-28T18:58:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karnikram.info/blog/node-setup/</loc>
+    <lastmod>2020-06-28T18:58:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karnikram.info/blog/ethrss/</loc>
     <lastmod>2019-07-12T18:54:49+05:30</lastmod>
   </url>
   
   <url>
-    <loc>http://karnikram.github.io/</loc>
-    <lastmod>2019-07-12T18:54:49+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://karnikram.github.io/blog/gsoc-2018-progress/</loc>
+    <loc>https://karnikram.info/blog/gsoc-2018-progress/</loc>
     <lastmod>2018-08-12T18:54:49+05:30</lastmod>
   </url>
   
   <url>
-    <loc>http://karnikram.github.io/blog/</loc>
+    <loc>https://karnikram.info/blog/</loc>
     <lastmod>2017-09-20T14:02:37+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://karnikram.github.io/blog/lie/</loc>
+    <loc>https://karnikram.info/blog/lie/</loc>
     <lastmod>2017-09-03T18:58:10+05:30</lastmod>
   </url>
   
   <url>
-    <loc>http://karnikram.github.io/categories/</loc>
+    <loc>https://karnikram.info/categories/</loc>
   </url>
   
   <url>
-    <loc>http://karnikram.github.io/tags/</loc>
+    <loc>https://karnikram.info/tags/</loc>
   </url>
   
 </urlset>

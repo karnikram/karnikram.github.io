@@ -2,30 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Karnik Ram | Blog</title>
-    <link>http://karnikram.github.io/</link>
+    <link>https://karnikram.info/</link>
     <description>Recent content on Karnik Ram | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jul 2019 18:54:49 +0530</lastBuildDate>
-    
-	<atom:link href="http://karnikram.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sun, 28 Jun 2020 18:58:10 +0530</lastBuildDate><atom:link href="https://karnikram.info/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting up a server node</title>
+      <link>https://karnikram.info/blog/node-setup/</link>
+      <pubDate>Sun, 28 Jun 2020 18:58:10 +0530</pubDate>
+      
+      <guid>https://karnikram.info/blog/node-setup/</guid>
+      <description>The following is something that I wrote as part of our internal documentation for our lab, but I decided to share it here because I&amp;rsquo;ve discussed some neat tools like Environment Modules and Prometheus among others that I think more people will find useful. Another reason is because I haven&amp;rsquo;t posted anything in a while (hashtag content).
+ This document details the process involved in setting up a new compute node, and adding it to the RRC compute cluster.</description>
+    </item>
     
     <item>
       <title>ETH Robotics Summer School</title>
-      <link>http://karnikram.github.io/blog/ethrss/</link>
+      <link>https://karnikram.info/blog/ethrss/</link>
       <pubDate>Fri, 12 Jul 2019 18:54:49 +0530</pubDate>
       
-      <guid>http://karnikram.github.io/blog/ethrss/</guid>
+      <guid>https://karnikram.info/blog/ethrss/</guid>
       <description>The ETH Robotics Summer School (ETHRSS) in an annual two-week summer school for graduate students organized by the Center for Robotics at ETH Zurich. The school is themed around building semi-autonomous robots for search-and-rescue, and it is also co-located with the ETH Robotics Symposium and the Swiss ARCHE (Advanced Robotic Capabilities for Hazardous Environments) week. I had the opportunity to participate in this program this year, which is also its first year, and in this post I&amp;rsquo;ll try to summarize my whole experience with the program beginning with the application process to my last day at Zurich, in the hope that someone finds it useful and for my own reference.</description>
     </item>
     
     <item>
       <title>Google Summer of Code with MRPT</title>
-      <link>http://karnikram.github.io/blog/gsoc-2018-progress/</link>
+      <link>https://karnikram.info/blog/gsoc-2018-progress/</link>
       <pubDate>Sun, 12 Aug 2018 18:54:49 +0530</pubDate>
       
-      <guid>http://karnikram.github.io/blog/gsoc-2018-progress/</guid>
+      <guid>https://karnikram.info/blog/gsoc-2018-progress/</guid>
       <description>This blog post chronicles my progress in working towards a GUI application for the automatic extrinsic calibration of range and visual sensors with Mobile Robot Programming Toolkit (MRPT) as a part of Google Summer of Code 2018.
 Project mentors: Eduardo Fernandez-Moral, Jose Luis Blanco-Claraco, Hunter Laux
 Project repository: autocalib-sensor-extrinsics
@@ -35,10 +41,10 @@ When the official list of participating organizations was accounced for this yea
     
     <item>
       <title>Lie Groups and Lie Algebra</title>
-      <link>http://karnikram.github.io/blog/lie/</link>
+      <link>https://karnikram.info/blog/lie/</link>
       <pubDate>Sun, 03 Sep 2017 18:58:10 +0530</pubDate>
       
-      <guid>http://karnikram.github.io/blog/lie/</guid>
+      <guid>https://karnikram.info/blog/lie/</guid>
       <description>Motivation In robotic vision, we frequently deal with problems where the motion of a camera is to be estimated. For instance, if a drone is being moved around in a scene and we were to reconstruct a 3D model of the scene using the images from the drone&amp;rsquo;s camera, we need a way to model and represent the trajectory of the camera and know where the images were taken from, before we can recover the geometry of the scene.</description>
     </item>
     
