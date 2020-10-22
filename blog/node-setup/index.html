@@ -41,7 +41,7 @@
 <meta itemprop="description" content="A summary of the procedure involved in setting up a typical server node in a cluster">
 <meta itemprop="datePublished" content="2020-06-28T18:58:10+05:30" />
 <meta itemprop="dateModified" content="2020-06-28T18:58:10+05:30" />
-<meta itemprop="wordCount" content="2544">
+<meta itemprop="wordCount" content="2633">
 
 
 
@@ -117,12 +117,13 @@ To allow our node to access this export, we add the following line (with the nod
 mount -v -t nfs 10.4.18.3:/mnt/rrc/home /home
 </code></pre></div><p>To enable automatic mounting (on boot), we add the following line to <code>/etc/fstab:</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">10.4.18.3:/mnt/rrc/home /home nfs rw,soft,intr <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
-</code></pre></div><br>
+</code></pre></div><p>At this point the local <code>/home</code> directory on our node should contain all the user directories fetched from black. This centralised setup allows users to easily move between different nodes, and allows us to manage daily backups and quotas from a single location. But since this is mounted over the network, there will be latency and so we expect users to use this directory only as a cold long-term storage. For local operations we setup a scratch drive.</p>
+<br>
 <h2 id="scratch-space-mount">Scratch space mount</h2>
 <p>Each compute node has attached to it a 1 TB SSD drive (sometimes 2 SSDs configured as a RAID0 drive) meant as low-latency storage for users to work with locally for their I/O operations. To mount this drive, we run the following commands (with the right device file name):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir /scratch
 mount /dev/sdb1 /scratch
-</code></pre></div><p>In addition, like before, we add the following line to <code>/etc/fstab</code> (run <code>blkid</code> to identify the right UUID):</p>
+</code></pre></div><p>In addition, as done for the home space mount, we add the following line to <code>/etc/fstab</code> (run <code>blkid</code> to identify the right UUID):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/dev/disk/by-uuid/b63e7654-3442-4eb7-98d4-25e78618d235 /scratch ext4 defaults <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
 </code></pre></div><p>Since this is a drive shared by all the users connected to the node, we setup <code>quota</code> to prevent any user from occupying too much space that would restrict other users. To enable quota for /scratch, we first modify the <code>/etc/fstab</code> file with the <code>usrquota</code> option as follows:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/dev/disk/by-uuid/b63e7654-3442-4eb7-98d4-25e78618d235 /scratch ext4 defaults,usrquota <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
@@ -218,6 +219,12 @@ curl http://blue.iiit.ac.in:9445/metrics
         hostname: blue.rrc.iiit.ac.in
         app: nvidia_gpu_prometheus_exporter
 </code></pre></div><p>Finally, we run <code>systemctl restart prometheus.service</code> to start scraping the data. We use Grafana for visualizing the scraped metrics from Prometheus, and creating alerts. Grafana is setup on the same server as Prometheus and is available at monitor.rrc.iiit.ac.in. A new dashboard with panels, and alert rules need to be created for this node. These can be directly copied from the dashboard of another node and are not discussed here.</p>
+<div id="images">
+<figure>
+<a href="/images/grafana-node-exporter.png"><img src="/images/grafana-node-exporter.png" alt="grafana-node-exporter.png" width="400"/></a>
+<figcaption> Grafana dashboard for the `node_exporter` metrics</figcaption>
+</figure>
+</div>
 <br>
 <h2 id="etc-backup">/etc backup</h2>
 <p>The <code>/etc</code> directory contains many important system configuration files that need to be kept track of. We use etckeeper to keep track of these files. It stores all the files inside a git repository and automatically commits any changes made to these files. It can also push these changes to a remote repository for backups. The setup is simple:</p>
