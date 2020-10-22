@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Karnik Ram">
 
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.76.5" />
 <title>Setting up a server node</title>
 <link rel="shortcut icon" href="https://karnikram.info/images/favicon.ico">
 <link rel="stylesheet" href="https://karnikram.info/css/style.css">
@@ -41,7 +41,7 @@
 <meta itemprop="description" content="A summary of the procedure involved in setting up a typical server node in a cluster">
 <meta itemprop="datePublished" content="2020-06-28T18:58:10+05:30" />
 <meta itemprop="dateModified" content="2020-06-28T18:58:10+05:30" />
-<meta itemprop="wordCount" content="2430">
+<meta itemprop="wordCount" content="2544">
 
 
 
@@ -124,7 +124,15 @@ mount -v -t nfs 10.4.18.3:/mnt/rrc/home /home
 mount /dev/sdb1 /scratch
 </code></pre></div><p>In addition, like before, we add the following line to <code>/etc/fstab</code> (run <code>blkid</code> to identify the right UUID):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/dev/disk/by-uuid/b63e7654-3442-4eb7-98d4-25e78618d235 /scratch ext4 defaults <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
-</code></pre></div><br>
+</code></pre></div><p>Since this is a drive shared by all the users connected to the node, we setup <code>quota</code> to prevent any user from occupying too much space that would restrict other users. To enable quota for /scratch, we first modify the <code>/etc/fstab</code> file with the <code>usrquota</code> option as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/dev/disk/by-uuid/b63e7654-3442-4eb7-98d4-25e78618d235 /scratch ext4 defaults,usrquota <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><p>Then we remount the drive and create the quota index and quota files using the following commands:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install quota
+mount -o remount /scratch
+quotacheck -cum /scratch
+quotaon /scratch
+</code></pre></div><p>Though quota is enabled for the drive now, we allocate quotas for the users only when the disk usage exceeds a certain threshold. This is explained in the <code>Custom Scripts</code> section.</p>
+<br>
 <h2 id="software-packages">Software packages</h2>
 <p>Apart from the basic CLI tools already installed in the first step, we try not to install anything using apt install. Installing any package often brings with it its own version of system dependencies which can silently break someone else&rsquo;s workflow. These dependencies can also get auto-updated during OS upgrades (if enabled). So we expect users to build any packages that they need locally by themselves, or install from conda-forge if available. That said, we build some commonly used packages from source by ourselves and install them to <code>/opt/</code>. This includes CUDA &amp; cuDNN, Singularity, gcc, and Matlab. However we don&rsquo;t always need to build all these tools. Most of these are statically built, so we can just copy all their files from the <code>/opt</code> directory of another compute node onto this node and things will work just fine.</p>
 <br>
