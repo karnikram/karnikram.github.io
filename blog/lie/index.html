@@ -41,7 +41,7 @@
 <meta itemprop="name" content="Lie Groups and Lie Algebra">
 <meta itemprop="description" content="Useful mathematical tool for optimization on manifolds"><meta itemprop="datePublished" content="2017-09-03T18:58:10+05:30" />
 <meta itemprop="dateModified" content="2017-09-03T18:58:10+05:30" />
-<meta itemprop="wordCount" content="1438">
+<meta itemprop="wordCount" content="1454">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Lie Groups and Lie Algebra"/>
@@ -149,12 +149,10 @@ $$ so(3) \stackrel{.}{=} \\{ \hat{\omega} \in \mathbb{R}^{3 x 3} \;|\; \omega \i
 <hr>
 <h2 id="the-exponential-map">The Exponential Map</h2>
 <p>We shall now try to formulate the mapping that will allow us to represent elements of the lie group \(SO(3)\) in terms of its lie algebra \(so(3)\).</p>
-<p>From the above discussion we know,</p>
-<div>
-\\[
-    \dot{R}(t) = \hat{\omega}R(t)\,,\,R(t_o) = I
-\\]
-</div>
+<p>From the above discussion we know,
+\[
+\dot{R}(t) = \hat{\omega}R(t),,,R(t_o) = I
+\]</p>
 <p>This is a linear ordinary differential equation with inital state at \(I\), whose solution is given by</p>
 <p>\[
 \boxed{R(t) = e^{\hat{\omega}t}}
@@ -169,19 +167,15 @@ e^{\hat{\omega}t} = I + \hat{\omega}t + \frac{(\hat{\omega}t)^2}{2!} + \frac{(\h
 exp: so(3) \rightarrow SO(3); ; \hat{\omega} \mapsto e^{\hat{\omega}}
 \]</p>
 <p>A closed-form expression for actually computing the exponential map is given by the Rodrigues' formula,</p>
-<div>
-   \[
-       \boxed{ 
-            e^{\hat{\omega}} = I + \frac{\hat{\omega}}{\Vert{\omega}\Vert}\sin{\Vert{\omega}\Vert} + \frac{\hat{\omega}^2}{\Vert{\omega}\Vert^2}(1 - \cos(\Vert\omega\Vert))
-<pre><code>   }
-\]
-</code></pre>
-</div>
+<p>\[
+\boxed{
+e^{\hat{\omega}} = I + \frac{\hat{\omega}}{\Vert{\omega}\Vert}\sin{\Vert{\omega}\Vert} + \frac{\hat{\omega}^2}{\Vert{\omega}\Vert^2}(1 - \cos(\Vert\omega\Vert))
+}
+\]</p>
 <p>We have an inverse to this exponential map, given by the logarithm, that&rsquo;ll allow us to take an element from the Lie group to the Lie algebra. In this case, a rotation matrix to its skew symmetric matrix. If \(R \neq I\), then</p>
-<div>
-\[
-   \boxed{\Vert{\omega}\Vert = \cos^{-1}\left(\frac{trace(R) - 1}{2}\right), \; 
-<p>\frac{\omega}{\Vert{\omega}\Vert} = \frac{1}{2\sin{(\Vert{\omega}\Vert)}}
+<p>\[
+\boxed{\Vert{\omega}\Vert = \cos^{-1}\left(\frac{trace(R) - 1}{2}\right), ;
+\frac{\omega}{\Vert{\omega}\Vert} = \frac{1}{2\sin{(\Vert{\omega}\Vert)}}
 \left[
 \begin{array}{c}
 r_{32} - r_{23}\<br>
@@ -189,8 +183,7 @@ r_{13} - r_{31}\<br>
 r_{21} - r_{12}
 \end{array}
 \right]}
-]</p>
-</div>
+\]</p>
 <p>If \(R = I\) then, \(\Vert{\omega}\Vert = 0\) and the axis is not defined.</br>
 However this representation is not unique since increasing the angle by multiples of \(2\pi\) will give the same \(R\).</p>
 <hr>
@@ -298,6 +291,7 @@ However this representation is not unique since increasing the angle by multiple
 <p>• <a href="https://github.com/devbharat/gtsam/blob/master/doc/LieGroups.pdf">Lie Groups for Beginners - Frank Dellaert</a></p>
 <p>• <a href="http://ethaneade.com/lie.pdf">Lie Groups for 2D and 3D Transformations - Ethan Eade</a></p>
 <p>• <a href="https://pixhawk.org/_media/dev/know-how/jlblanco2010geometry3d_techrep.pdf">A tutorial on SE(3) transformation parameterizations and on-manifold optimization - Jose Luis Blanco</a></p>
+<p>• <strong>(New)</strong> <a href="https://arxiv.org/abs/1812.01537">A micro Lie theory for state estimation in robotics - Joan Solà et al.</a></p>
 
     </section>
 </article>
