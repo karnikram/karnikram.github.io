@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Karnik Ram">
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.86.0" />
 <title>Lie Groups and Lie Algebra</title>
 <link rel="shortcut icon" href="https://karnikram.info/images/favicon.ico">
 <link rel="stylesheet" href="https://karnikram.info/css/style.css">
@@ -237,7 +237,7 @@ However this representation is not unique since increasing the angle by multiple
 <hr>
 <h2 id="matlab-code">Matlab Code</h2>
 <h4 id="conversion-from-se3-to-se3">Conversion from se(3) to SE(3)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#66d9ef">function</span> [ksi] = <span style="color:#a6e22e">computese3</span>(T)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#66d9ef">function</span> [ksi] = <span style="color:#a6e22e">computese3</span>(T)
      R = T(<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>);
      thetha = acos((trace(R) <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
      
@@ -256,7 +256,7 @@ However this representation is not unique since increasing the angle by multiple
      <span style="color:#66d9ef">end</span>     
 <span style="color:#66d9ef">end</span>
 </code></pre></div><h4 id="conversion-from-se3-to-se3-1">Conversion from SE(3) to se(3)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#66d9ef">function</span> [T] = <span style="color:#a6e22e">computeSE3</span>(twistVec)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab"><span style="color:#66d9ef">function</span> [T] = <span style="color:#a6e22e">computeSE3</span>(twistVec)
     <span style="color:#75715e">% Splitting the twist vector into angular and translational velocity</span>
     <span style="color:#75715e">% vectors</span>
      v = twistVec(<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>)<span style="color:#f92672">&#39;</span>;
