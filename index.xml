@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Karnik Ram | Blog</title>
@@ -6,7 +6,11 @@
     <description>Recent content on Karnik Ram | Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jan 2021 18:58:10 +0530</lastBuildDate><atom:link href="https://karnikram.info/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Jan 2021 18:58:10 +0530</lastBuildDate>
+    
+	<atom:link href="https://karnikram.info/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>My note taking setup</title>
       <link>https://karnikram.info/blog/notes-setup/</link>
@@ -43,6 +47,7 @@
       <description>This blog post chronicles my progress in working towards a GUI application for the automatic extrinsic calibration of range and visual sensors with Mobile Robot Programming Toolkit (MRPT) as a part of Google Summer of Code 2018.
 Project mentors: Eduardo Fernandez-Moral, Jose Luis Blanco-Claraco, Hunter Laux
 Project repository: autocalib-sensor-extrinsics
+
 Student Application Period March 12th - March 27th
 When the official list of participating organizations was accounced for this year&amp;rsquo;s program I was really excited to find MRPT&amp;rsquo;s project idea for a complete GUI app for extrinsic calibration.</description>
     </item>

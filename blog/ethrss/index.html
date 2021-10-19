@@ -20,7 +20,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Karnik Ram">
 
-<meta name="generator" content="Hugo 0.86.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 <title>ETH Robotics Summer School</title>
 <link rel="shortcut icon" href="https://karnikram.info/images/favicon.ico">
 <link rel="stylesheet" href="https://karnikram.info/css/style.css">
@@ -32,17 +32,24 @@
 <meta property="og:title" content="ETH Robotics Summer School" />
 <meta property="og:description" content="A summary of my experience as a paricipant" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://karnikram.info/blog/ethrss/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2019-07-12T18:54:49+05:30" />
-<meta property="article:modified_time" content="2019-07-12T18:54:49+05:30" />
+<meta property="og:url" content="https://karnikram.info/blog/ethrss/" />
+<meta property="article:published_time" content="2019-07-12T18:54:49&#43;05:30"/>
+<meta property="article:modified_time" content="2019-07-12T18:54:49&#43;05:30"/>
 
 
 
 <meta itemprop="name" content="ETH Robotics Summer School">
-<meta itemprop="description" content="A summary of my experience as a paricipant"><meta itemprop="datePublished" content="2019-07-12T18:54:49+05:30" />
-<meta itemprop="dateModified" content="2019-07-12T18:54:49+05:30" />
+<meta itemprop="description" content="A summary of my experience as a paricipant">
+
+
+<meta itemprop="datePublished" content="2019-07-12T18:54:49&#43;05:30" />
+<meta itemprop="dateModified" content="2019-07-12T18:54:49&#43;05:30" />
 <meta itemprop="wordCount" content="3538">
+
+
+
 <meta itemprop="keywords" content="" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ETH Robotics Summer School"/>
 <meta name="twitter:description" content="A summary of my experience as a paricipant"/>
@@ -80,116 +87,176 @@
         </h2>
     </header>
     <section id="post-body">
-        <p>The ETH Robotics Summer School (ETHRSS) in an annual two-week summer school for graduate students organized by the Center for Robotics at ETH Zurich. The school is themed around building semi-autonomous robots for search-and-rescue, and it is also co-located with the ETH Robotics Symposium and the Swiss ARCHE (Advanced Robotic Capabilities for Hazardous Environments) week. I had the opportunity to participate in this program this year, which is also its first year, and in this post I&rsquo;ll try to summarize my whole experience with the program beginning with the application process to my last day at Zurich, in the hope that someone finds it useful and for my own reference.</p>
+        
+
+<p>The ETH Robotics Summer School (ETHRSS) in an annual two-week summer school for graduate students organized by the Center for Robotics at ETH Zurich. The school is themed around building semi-autonomous robots for search-and-rescue, and it is also co-located with the ETH Robotics Symposium and the Swiss ARCHE (Advanced Robotic Capabilities for Hazardous Environments) week. I had the opportunity to participate in this program this year, which is also its first year, and in this post I&rsquo;ll try to summarize my whole experience with the program beginning with the application process to my last day at Zurich, in the hope that someone finds it useful and for my own reference.</p>
+
 <p>Overall, the program was an amazing experience for me in all aspects and I am grateful for having got the opportunity to participate in it along with the generous financial support that I received. I learnt quite a bit about the typical mobile robot navigation stack, met some amazing people, and had a lot of fun. I highly recommend this program to any new graduate student who&rsquo;s working in robotics.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/arche-end.jpg"><img src="/images/ethrss/arche-end.jpg" alt="arche-end.jpg" width="550"/></a>
 </figure>
 </div>
+
 <h2 id="application">Application</h2>
+
 <p>I first got to know about ETHRSS from the robotics-worldwide mailing list in the last week of March 2019. It was announced along with the opening of the new Center for Robotics at ETH Zurich. Though the program was new and the details were brief, it was organized by ASL, RSL, and V4RL among other labs at ETH, whose work I&rsquo;ve read and always admired. And unlike so many other summer schools there was no registration fee, accommodation and food were completely taken care of, and there was also a separate application for travel grants. I was instantly hooked.</p>
+
 <p>The application procedure was quite simple. I had to submit a one-page motivation letter and a financial support justification letter along with my resume and other links to my related work via an online form. There was no need for any recommendation letters or academic transcripts. I worked on my application over a week and submitted my application just before the deadline on April 15th. In my motivation letter I mostly just summarized my prior work, and my reasons for why I want to attend the school and why they should pick me.</p>
+
 <p>I was delighted to receive my acceptance email two weeks later. I also received a travel grant which fully covered my travel expenses. I wouldn&rsquo;t have been able to participate in the program without this generous financial support. At the school we were told that about 200 students had applied out of which they selected 53 primarily on the basis of prior work in robotics and the motivation letter. About 20% of the participants received full financial support for travel.</p>
+
 <h2 id="preparation">Preparation</h2>
+
 <p>I&rsquo;d never travelled abroad before, let alone attend a summer school, so I started with the formalities early. I had to apply for a Schengen visa, and though the entire process was clearly explained online, the process was still quite arduous with so many different documents to arrange for and keep track of. It took me about 10 days just to submit my application packet, but the turn-around time was quick - my visa was approved and was door-delivered in under three days.</p>
+
 <p>I then had to get my laptop ready for the summer school. We were sent instructions to setup our laptops with Ubuntu 18.04, ROS Melodic, and the Eclipse IDE. I already had Ubuntu 16.04 and ROS Kinetic running on my laptop, but they were specific about the versions required so I had to upgrade them. We were also given a virtual machine which had some of the packages required for the summer school already installed for us, and a tutorial to get familiar with the basics of the navigation stack. But I found my laptop to be too slow to run all the parts of the tutorial. It has a 4th gen i5 and only 4GB RAM which the organizers felt won&rsquo;t be sufficient for the school, so I borrowed a slightly more powerful laptop with 8GB RAM and a 6th gen i5 from a friend and setup everything on that. But later during the school I found this configuration too to be at times insufficient.</p>
+
 <p>I also spent some time reading/reviewing the papers of the researchers and students organizing the summer school in case I got the chance to discuss with them more about their work and have any lingering doubts cleared. Some colleagues who&rsquo;d attended conferences before also advised me to print out contact cards and resumes to hand out to people. I got them printed but I didn&rsquo;t like that I was getting too formal so I ditched them in the last minute. We were also sent a travel kit with a detailed program itinerary, some information about the logistics and social events.</p>
+
 <p>I reached Zurich on the 26th of June, one day earlier than the itinerary because I booked the wrong flight ticket. But it turned out to be a happy accident since it gave me some extra time to explore the city. The city was really beautiful and clean, and with a very efficient transportation system. I got to ride the famous Polybahn to ETH and then roamed around the campus. I also roamed around the busy places like Bahnhofplatz, Bahnhofstrasse, Rennweg, among other places and did some window shopping. Zurich is generally a very expensive city but I found the electronics to be relatively cheap. I later spent the night at a friend&rsquo;s place. The people were generally very polite and friendly, everyone greets you with a smile, something which is hard to do in India without being misunderstood.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/zurich-collage-1.jpeg"><img src="/images/ethrss/zurich-collage-1.jpeg" alt="zurich-collage-1.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h2 id="symposium">Symposium</h2>
+
 <p>The program kicked off on the 27th with the ETH Robotics Symposium. Top researchers from different universities, and working in disparate areas, spoke about their lines of research and interacted. The symposium was for two days and it was held in the ETH Main building. On the first day there were talks by Sanjiv Singh, Achim Walter, Marc Pollefeys, Dieter Fox, and Jamie Paik. Sanjiv spoke about autonomous aerial vehicles, or &lsquo;self-flying taxis&rsquo;, and their challenges. Achim spoke about the upcoming area of farm robotics, and Marc spoke about his work in mixed reality and the Hololens 2 at Microsoft. Dieter spoke about object manipulation in complex indoor environments, such as the kitchen, and finally Jamie spoke about her work in soft robotics which was particularly exciting for me since the area was completely new to me.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/symposium-1.jpeg"><img src="/images/ethrss/symposium-1.jpeg" alt="symposium-1.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <p>After these talks lab tours and demos were organized by the various robotics labs at ETH - Autonomous Systems Lab (ASL), Robotic Systems Lab (RSL), Vision for Robotics Lab (V4RL), and the different groups at the Institute for Dynamic Systems and Control, among many others. I got to visit ASL, RSL, V4RL, and the Multi-Scale Robotics Lab. I got to see some demos of ANYmal, Ascento, and Adero, and some presentations about collaborative SLAM, omnidirectional hexacopters, and microrobotic assisted surgery which were cool. We algo got to talk to the students in the lab who were all very enthusiastic.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/demos.jpeg"><img src="/images/ethrss/demos.jpeg" alt="demos.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <p>At the end of the day we also had a mixer dinner event where we got to interact with all the researchers and students who&rsquo;d come for the symposium, as well as the other participants of the summer school. The mixer was quite fun, and a memorable moment for me was interacting with Sanjiv Singh and listening to his story about how he landed in the US and in robotics research almost by chance. Some students also formed groups and went for a swim in Lake Zurich but by that point I&rsquo;d already reached my peak socializing limit so I checked into the hostel and crashed early.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/mixer.jpeg"><img src="/images/ethrss/mixer.jpeg" alt="mixer.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <p>On the second day of the symposium there were talks by Seth Hutchinson, Yulia Sandamirskaya, Andrea Censi, and Sami Haddadin. Seth spoke about his work on a bat-like robot, Yulia spoke about the emerging area of neuromorphic computing, Andrea spoke about the relatively less explored area of mult-robot behavior specification, and finally Sami spoke about his work on force-sensitive manipulator control at Franka Emika and TUM. I found all these talks engaging but personally a bit harder to follow than yesterday.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/symposium-2.jpeg"><img src="/images/ethrss/symposium-2.jpeg" alt="symposium-2.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <p>All the talks from the symposium were recorded and are available online on the ETH <a href="https://video.ethz.ch/events/2019/rsl.html">videoportal</a>.</p>
+
 <h2 id="summer-school">Summer School</h2>
+
 <p>Once the symposium concluded on the 28th afternoon, we were immediately transferred to the training facility at Wangen an der Aare by bus, which is where the summer school was organized. The training facility is situated inside a Swiss military base that the army uses to train its soldiers and fire-fighters for disaster-response scenarios. We were housed at the &lsquo;Gemeindekasarne&rsquo; (barracks) while our actual working centre was a twenty-minute walk from there. The place is quite peaceful and scenic, like most of Switzerland, with all the roads running alongside the Aare river, so our everyday walk turned out to be quite enjoyable.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/wangen.jpeg"><img src="/images/ethrss/wangen.jpeg" alt="wangen.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h3 id="day-zero">Day zero</h3>
+
 <p>The summer school officially kicked-off on the evening of the 28th, with Cesar briefing us about our plan for the next three days and the final challenge. There were going to be lectures and hands-on tutorials on state estimation, mapping, path planning, trajectory optimization, and object detection. At the end of all of this there was going to be a team challenge for which we had to program a ground robot, based on the tutorials, to perform an inspection task in a hypotethical disaster-response scenario.</p>
+
 <p>We were split into eight teams, and there were four ground robots to work on. The ground robot was a SuperMegaBot (SMB) made by Inspectorbots. The robot was fitted with a RS-LiDAR-16, a RealSense D435, a custom Visual-inertial (VI) sensor, and a custom battery switching circuit and emergency-stop circuit. We spent the evening of our first day getting familiar with our robots and setting up all the ROS software packages on our laptops that we were going to need for the tutorials. The robots were already fully setup. I was in a team with five other members - Emilk, Yimeng, Alfredo, Alex, and Maria. We named our team Wangen Warriors and our robot Rambo. Yes, we were there to fight!</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/symposium-2.jpeg"><img src="/images/ethrss/day0.jpeg" alt="day0.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h3 id="day-one">Day one</h3>
+
 <p>The day started at 9AM with a lecture by Timothy Sandy on state estimation. He introduced his ConFusion sensor fusion framework that&rsquo;s specialized for time-critical state estimation for robot platforms such as ours that have multiple sensors. He then also gave a tutorial to get us familiar with his package and asked us to explore how to compensate for the latencies more effectively in order to generate smooth state estimates.</p>
+
 <p>We then had a lecture by Margarita Chli on simultaneous localization and mapping (SLAM). She gave us a good overview of the SLAM problem - the different ways it is formulated, the different parts of a typical SLAM pipeline, and what is the state of the art today. She also spoke about the research her lab, V4RL, conducts in this area such as collaborative SLAM which were quite interesting. This was followed by a tutorial in which Abel and Lorenz got us familiar with the ICP Mapper and Elevation Mapping packages for generating maps using LiDAR data, and they also gave us further directions to experiment with them.</p>
+
 <p>We spent the rest of the evening trying to complete the tutorial exercises for the day. We then tried to get things to run on the robot directly and recorded a few ROS bagfiles for offline experimentation. It was quite fun to work as a team, something I don&rsquo;t get to do often during my research, and we ended up staying at the facility till midnight.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/day1.jpeg"><img src="/images/ethrss/day1.jpeg" alt="day1.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h3 id="day-two">Day two</h3>
+
 <p>I had to wake up extra early today, at about 6:30 AM, since it was my turn to help with the breakfast preparation. I also had to stay back longer to help with the cleaning, so I ended up reaching the facility both late and sleep deprived. Nicholos Lawrence and Luca Bartolomei first gave us a lecture on motion planning. It was an extensive overview of the different approaches to motion planning - graph-based, sampling-based, potential-field based - and they followed it up with a tutorial where we were introduced to the Voxblox and OMPL packages.</p>
+
 <p>We then had a short lecture and tutorial by Farhod Farshidian where he introduced the trajectory optimization problem, or the &ldquo;optimization-based control&rdquo; problem as he liked to call it. He gave an overview of the different methods but focused specifically on MPC. The tutorial task was to run the MPC-based planner in simulation and tune the different gains but this part totally went over my head. At this point we decided to split the different tasks amongst ourselves in our team, with half the team working on the tutorials and the rest of us working on getting the state estimator and mapper to run properly on the robot.</p>
+
 <p>After lunch there were two social events planned. We first went to a rope park, Seilpark Balmberg, which was a lot of fun. We then had dinner on the way back at the Mittlerer Balmberg restaurant where for the first time in the trip I managed to get proper vegan food! After dinner some of us came back to the training facility to continue to work on our robots and getting it ready for the challenge till midnight.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/day2.jpeg"><img src="/images/ethrss/day2.jpeg" alt="day2.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h3 id="day-three">Day three</h3>
+
 <p>On the morning of the final day of the summer school, a lecture on visual recognition by Cesar was originally scheduled, but in order to give us more time to work on our robots, this was cancelled and we instead only had one tutorial. The tutorial was on the Maplab framework, and object detection, and was given by Andrei Cramariuc and Florian Tschopp. We then worked on our robots till lunch after which the trials for the challenge started.</p>
+
 <p><strong>Challenge</strong></p>
+
 <p>The task for the challenge was to program our robot to safely enter a closed building, identify and map any objects or dummy victims inside, and exit. All the objects were equipped with AprilTags, to simply our task, and each team was given roughly one hour to perform this operation. The scoring was based on the extent of autonomous navigation - fully autonomous (no operator involved), navigation via operator defined waypoints, or fully manual (teleoperation) - the quality of the 3D map obtained, the number of objects identified from the scene, and the operation time.</p>
+
 <p>Though in principle this task seemed easy since we were already given all the code and packages we need during the tutorials, putting them all together as one system proved to be very difficult. In our team&rsquo;s case, the VI-sensor kept failing for different reasons, sometimes because of the temperature, and even when it worked the estimator quickly accumulated a lot of drift which made all the downstream tasks like planning impossible. We weren&rsquo;t able to fix any of these issues in time and there was also a rain delay just before our trial which took away some precious testing time. So when our turn came, we manually drove the robot until the entrance of the building, and once inside we sort of just hoped our programs would work. As expected they didn&rsquo;t, so we switched to manual operation but even then our detector failed due to communication issues. We only managed to get a decent map of the building which was stored locally on the robot.</p>
+
 <p>The other teams too faced similar issues but they decided to go with complete teleoperation, including the detection. Some teams even used their 4G-connected phones to extend their range of operation. One team was able to find all the objects that way, and they ended up with the maximum points and eventually won the challenge. Our take away was that robot system integration and testing is nontrivial and is a science in itself, and getting all the components to work together robustly needs a lot of dedicated time and testing.</p>
+
 <p>At the end of the day we then had the closing party where prizes and certificates were distributed, and some concluding remarks were made. Then there was also some social time with music and snacks, but I was already quite sleep-deprived at this point and with a bad headache so I left the facility early to catch up on some sleep.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/day3.jpeg"><img src="/images/ethrss/day3.jpeg" alt="day3.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h2 id="arche-week">ARCHE week</h2>
+
 <p>At this point about half of the teams left while the rest of us took the option to extend our stay at the facility, as planned earlier, to continue working on our robots for the rest of the week from July 2nd to the 5th. We were also going to witness the ARCHE (Advanced Robotic Capabilities for Hazardous Environments) week that was scheduled at the same facility. The ARCHE week is a week-long exercise session for research teams across Europe to deploy and test their robots in simulated hazardous scenarios and other challenging scenarios. Several of these teams had already arrived the day before, and most of them were there to prepare for the DARPA Subterranean Challenge that&rsquo;s scheduled for September later in the year.</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/arche.jpeg"><img src="/images/ethrss/arche.jpeg" alt="arche.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <p>During this week, we were given complete freedom to work on whatever we wanted to, which was nice. There was also another challenge with the same task scheduled for the last day which we could participate in. We as a team decided to work for the challenge, while there were other participants who decided to work with the teams who&rsquo;d arrived for ARCHE. Since our VI-sensor was being unreliable, we decided to go with a LiDAR-only state estimator. We setup Lego-LOAM on our robot and worked on integrating it with the rest of the stack. We were also given a MicroStrain IMU and an Intel T265 by the organizers in case we needed them. We managed to get LOAM to work with Voxblox and the planners after writing some conversion scripts. However, interestingly, the controllers stopped working and weren&rsquo;t sending any actuation commands to the wheels. Turns out the controllers were communicating within a different framework, called &lsquo;cosmo ros&rsquo;, which was invisible to us until that point. It was custom built by RSL for performance reasons, to which we were not able to make any modifications. Some RSL folks did try to help us out but they were mostly busy with their own exercises so we were unable to get the new pipeline to work completely before the challenge. Unfortunately none of the teams could get the complete navigation stack to properly run even for this second challenge, and we all relied on manual teleoperation again.</p>
+
 <p>Our run for the challenge didn&rsquo;t go too differently from last time, except this time our detector ran properly, and we also got an extended range because of a 4G setup on our robot which we could beam into for better teleoperation. Our results were still not as good as the winning team which successfully identified all the objects and also got a better-looking map. After the challenge we had a final presentation, after which we had to clean and pack up all of our stuff from the training facility. We then bid farewell to all the amazing organizers and thanked them, and together with all the participants we went for a swim in the Aare river. A traditional Swiss dinner with Fondue was also arranged for us. We left for Zurich early next morning.</p>
+
 <h2 id="züri-fäscht">Züri Fäscht</h2>
+
 <p>The end of the summer school also happened to nicely coincide with Züri Fäscht (Zurich Fest), a three-day city-wide festival that happens only once in three years. So when we returned to Zurich on the 6th, the city had turned into one big party with many concerts, shows, fireworks, and food stalls setup all around the city center. We roamed through the fest as a group, had some food and did some shopping, before slowly dispersing in our own ways. I spent the night at a kind student&rsquo;s place before leaving for India on the 7th. My flight got cancelled though, so I arrived back in India only on the 9th, with my luggage missing and all my money stuck in foreign exchange, but that&rsquo;s another story.</p>
+
 <p>If you&rsquo;ve come this far in the post, thank you for reading it and I hope you liked it!</p>
+
 <div id="images">
 <figure>
 <a href="/images/ethrss/zurich-collage-2.jpeg"><img src="/images/ethrss/zurich-collage-2.jpeg" alt="zurich-collage-2.jpeg" width="550"/></a>
 </figure>
 </div>
+
 <h2 id="tips-for-future-participants">Tips for future participants</h2>
+
 <ul>
 <li>You&rsquo;ll need a laptop with at least 16 GB of RAM to comfortably run all the tutorial exercises. Otherwise you could also probably work with your teammate&rsquo;s laptop.</li>
 <li>ROS is a very strong pre-requisite so make sure to brush up on it, and also try to study some of the finer implementation details of their packages before hand so you can utilize the school time more efficiently.</li>
@@ -197,7 +264,9 @@
 <li>While booking flight tickets try to account for flight delays or cancellations since they&rsquo;re more common than we think.</li>
 <li>In the case of travel reimbursements, opt for the in-cash option over bank transfer if possible since the process is usually significantly faster.</li>
 </ul>
+
 <h3 id="some-useful-links">Some useful links</h3>
+
 <ul>
 <li><a href="https://robotics-summerschool.ethz.ch/">Summer school website</a></li>
 <li><a href="https://video.ethz.ch/events/2019/rsl.html">Videos from the symposium</a></li>
