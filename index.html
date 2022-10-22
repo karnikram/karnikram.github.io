@@ -128,9 +128,10 @@
 							</p>
 							<p align="justify">
 								I am a Research Associate in the <a href="https://ri.cmu.edu">Robotics
-								nstitute</a> at Carnegie Mellon University where I work
-								on robot perception using a <a href="https://www.cs.cmu.edu/~ILIM/light_curtains/">novel 
-								controllable depth sensor</a> with Prof. <a href="http://www.cs.cmu.edu/~srinivas/">Srinivasa Narasimhan</a>.
+								Institute</a> at Carnegie Mellon University where I work
+								on active robot perception using a <a href="https://www.cs.cmu.edu/~ILIM/light_curtains/">novel 
+								controllable depth sensor</a> with 
+								Prof. <a href="http://www.cs.cmu.edu/~srinivas/">Srinivasa Narasimhan</a>.
 								Previously, I worked on a camera-less and low-power indoor navigation system, and assistive
 								technology with Prof. <a href="http://www.cs.cmu.edu/~kkitani/">Kris Kitani</a>.
 								<br>
@@ -149,11 +150,8 @@
 								<a href="mailto:removethisifhuman-karnikram@gmail.com"
 									style="font-weight:normal;color:#b00;">Email</a> |
 								<a href="/karnik-cv.pdf" style="font-weight:normal;color:#b00">CV</a> |
-								<a href="https://github.com/karnikram" style="font-weight:normal;color:#b00">Github</a>
-								|
-								<a href="https://www.linkedin.com/in/karnikram/"
-									style="font-weight:normal;color:#b00">LinkedIn</a> |
-								<a href='https://karnikram.info/blog' style="font-weight:normal;color:#b00"> Blog</a>
+								<a href="https://github.com/karnikram" style="font-weight:normal;color:#b00">Github</a> |
+								<a href='https://twitter.com/karnikram' style="font-weight:normal;color:#b00"> Twitter</a>
 							</p>
 						</td>
 						<td width="33%" id="avatar">
@@ -171,7 +169,7 @@
 				<td>
 					<heading>What's new</heading>
 					<ul>
-						<li>Oct 2022: Our work on an assistive indoor navigation system was featured in <a href="https://www.youtube.com/watch?v=hvfV-iGwYX8&t=4262s">Meta Connect</a>.</li>
+						<li>Oct 2022: Our work on assistive indoor navigation at CMU was featured in <a href="https://www.youtube.com/watch?v=hvfV-iGwYX8&t=4262s">Meta Connect</a>.</li>
 						<li> June 2022: Our work on using map priors for inertial odometry got accepted for IROS. </li>
 						<li>Oct 2021: I started as a research associate at CMU RI.</li>
 						<li> June 2021: Our work on <a href="https://karnikram.info/rp-vio">RP-VIO</a> got accepted
@@ -333,20 +331,21 @@
 			<table class="compact" border="0" align="center" cellspacing="0" cellpadding="20">
 				<tr>
 					<td width="33%">
-						<img src='/images/artpark.png' style="width:238px;height:140px;" />
+						<div style="display:flex;justify-content:center;" >
+						<a href="https://drive.google.com/file/d/1Ct_KBYmZsla3RRalO-Ny9TSg3bV9hurB/view?usp=sharing"><img src='/images/navcog2.png' style="width:138px;height:200px;margin-left: auto;margin-right: auto;"/></a>
+						</div>
 					</td>
 					<td valign="top" width="67%">
 						<p>
-							<papertitle>ARTPARK Robotics Challenge</papertitle><br> Suraj Bonagiri, Viswanarayanan S,
-							Sreeharsha P, Ashwin Rao, Karnik Ram &nbsp;|&nbsp; Summer
-							2021
+							<papertitle>Smartphone-based Indoor Navigation</papertitle><br> Vivek Roy, Karnik Ram, Kris Kitani &nbsp;|&nbsp; Summer
+							2022
 						<p align="justify">
-							Mentored and worked with a team of students to implement a janitorial robot to autonomously
-							navigate and clean a washroom environment in simulation. The team has progressed to the top
-							4 out of 30 teams in the challenge and has been selected for the final round with funding to
-							work on a realworld implementation.
+							Developed a turn-by-turn indoor navigation app for iOS that combined three deep models for localization in real-time
+							-- LSTM for bluetooth-based absolute position estimation, LSTM for IMU-based relative position estimation, LSTM + U-Net for
+							encoding floor map information. Data collected using Meta's Project Aria Glasses were used for training the models.
 						</p>
-						<a href="https://www.artpark.in/problem-description">Challenge page</a>
+						<a href="https://drive.google.com/file/d/1Ct_KBYmZsla3RRalO-Ny9TSg3bV9hurB/view?usp=sharing">Video demo</a> |
+						<a href="https://drive.google.com/file/d/1dgYrTZKwIKybhzXyjdfPwOmABQXiCRs9/view?usp=sharing">Presentation</a>
 					</td>
 				</tr>
 				<tr>
@@ -366,14 +365,41 @@
 							target-less calibration algorithms based on plane-matching and line-matching were integrated
 							into the app, allowing the calibration to be performed in any generic scene setting without
 							the need for any specific targets.
-
 						</p>
 						<a href="https://github.com/karnikram/autocalib-sensor-extrinsics">Code</a> |
-						<a href="https://www.youtube.com/watch?v=IWMdQcNshFI">Video</a> |
+						<a href="https://www.youtube.com/watch?v=IWMdQcNshFI">Demo Video</a> |
 						<a href="http://karnikram.info/blog/gsoc-2018-progress/">Report</a>
 					</td>
 				</tr>
 
+				<tr>
+					<td width="33%">
+						<img src='/images/artpark.png' style="width:238px;height:140px;" />
+					</td>
+					<td valign="top" width="67%">
+						<p>
+							<papertitle>ARTPARK Robotics Challenge</papertitle><br> Suraj Bonagiri, Viswanarayanan S,
+							Sreeharsha P, Ashwin Rao, Karnik Ram &nbsp;|&nbsp; Summer
+							2021
+						<p align="justify">
+							Mentored and worked with a team in a national-level competition on a janitorial robot to autonomously
+							navigate and clean a washroom setup. The team was selected for the simulation and on-site rounds out of
+							of 136 teams and finished second overall. 
+						</p>
+						<a href="https://www.artpark.in/robotChallenge">Challenge page</a>
+					</td>
+				</tr>
+			</table>
+
+			<table class="compact" align="center" border="0" cellspacing="0" cellpadding="20">
+				<tr>
+					<td width="100%" valign="middle">
+						<heading>Undergrad Projects</heading>
+					</td>
+				</tr>
+			</table>
+
+			<table class="compact" border="0" align="center" cellspacing="0" cellpadding="20">
 				<tr>
 					<td width="33%">
 						<a href="/images/residual.png">
