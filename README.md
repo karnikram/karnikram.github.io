@@ -1,4 +1,4 @@
-My personal [site]((karnikram.info)) repo, hosted using Github Pages.
+My personal [website](karnikram.info), hosted using Github Pages.
 
 Built using [Hugo](http://gohugo.io).
 
