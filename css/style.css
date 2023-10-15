@@ -54,7 +54,7 @@ html, body { height: 100%; }
 
 body {
 	font:15px/1 "Lato", Verdana, Helvetica, sans-serif;
-	color: #666;
+	color: #072140;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
@@ -62,14 +62,14 @@ body {
 h1 {
 	font-size: 30px;
 	letter-spacing: -1px;
-	color: #222;
+	color: #072140;
 	font-weight: bold;
 }
 
 h2 {
 	font: 19px/1.3em "Lato", Verdana, Helvetica, sans-serif;
 	font-weight: bold;
-	color: #b00;
+	color: #3070B3;
 }
 
 .profile #wrapper {
@@ -96,13 +96,13 @@ h2 {
 	letter-spacing: 0px;
 	font-size: 28px;
 	font-family: "Lato", Verdana, Helvetica, sans-serif;
-	color: #b00;
+	color: #3070B3;
 }
 
 .profile h2 {
 	  font-size: 20px;
 	  font-weight:300;
-	  color: #666;
+	  color: #072140;
 	  margin-top: 10px;
 	  font-family: "Lato", Verdana, Helvetica, sans-serif;
 	  font-style: normal;
@@ -118,12 +118,12 @@ nav.main-nav a {
 	top: 8px;
 	right: 6px;
 	padding: 8px 12px;
-	color: #b00;
+	color: #3070B3;
 	font-size: 11px;
 	font-weight: bold;
 	line-height: 1.35;
 	border-radius: 3px;
-	border: 1px solid #b00;
+	border: 1px solid #3070B3;
 	}
 
 nav.main-nav a.cta {
@@ -159,19 +159,19 @@ a,
 #post-list li:hover .dates,
 #title:hover {
 	text-decoration: none;
-	color: #b00;
-	color: #b00;
+	color: #3070B3;
+	color: #3070B3;
 }
 
 a{
-	color: #666;
+	color: #072140;
 	font-weight: bold;
 }
 
-p a { color: #666; text-decoration:none;font-weight: bold; }
+p a { color: #072140; text-decoration:none;font-weight: bold; }
 p a:focus, a:hover 
 	{
-		color: #b00;
+		color: #3070B3;
     	text-decoration:none;
 	}
 
@@ -230,7 +230,7 @@ em, i { font-style: italic; }
 
 .post h1 {
 	margin-bottom: 20px;
-	color: #b00;
+	color: #3070B3;
 	font: 300 32px/1.4em "Lato", Verdana, Helvetica, sans-serif;
 }
 
@@ -238,7 +238,7 @@ em, i { font-style: italic; }
 	margin-bottom: 15px;
 	  font: 300 24px/1.5 "Lato", Verdana, Helvetica, sans-serif;
 	  font-weight: 300;
-	  color: #b00;
+	  color: #3070B3;
 }
 
 .post h2.headline {
@@ -259,7 +259,7 @@ em, i { font-style: italic; }
 	margin-top: 2px;
 }
 
-h3, h4, h5 { color:#666; }
+h3, h4, h5 { color:#072140; }
 
 h3 { font-size:20px; font-weight: 400; }
 h4 { font-size:16px; font-weight: 400; }
@@ -268,7 +268,7 @@ h5 { font-size:15px; font-weight: 400; }
 h6 {
 	font-size: 13px;
 	font-weight: 400;
-	color: #666;
+	color: #072140;
 	margin-bottom: 6px;
 }
 
@@ -324,7 +324,7 @@ img {
 
 #images{
 	text-align: center;
-	color:#666;
+	color:#072140;
 	padding: 10px
 }
 /* Made with Cactus Badge */
@@ -360,7 +360,7 @@ Post List
 }
 
 #post-list a {
-	color: #666;
+	color: #072140;
 	display: block;
 	font: bold 18px/1.7 "Lato", Verdana, Helvetica, sans-serif;
 	font-weight: 400;
@@ -431,7 +431,7 @@ Post List
 }
 
 #post-meta div span.dark {
-	color: #b00;
+	color: #3070B3;
 	font-size: 15px;
 }
 
