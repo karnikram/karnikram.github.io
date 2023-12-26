@@ -127,7 +127,8 @@
 								<name>Karnik Ram</name>
 							</p>
 							<p align="justify">
-								I am an <a href="https://ellis.eu">ELLIS PhD</a> student supervised by Prof. <a href="https://scholar.google.com/citations?user=cXQciMEAAAAJ&hl=en"> Daniel Cremers</a> at the Technical University of Munich and Prof. <a href="https://scholar.google.com/citations?user=8200InoAAAAJ&hl=en">Max Welling</a> at the University of Amsterdam.
+								I am an <a href="https://ellis.eu">ELLIS PhD</a> student supervised by Prof. <a href="https://scholar.google.com/citations?user=cXQciMEAAAAJ&hl=en"> Daniel Cremers</a> at the Technical University of Munich
+								and Prof. <a href="https://scholar.google.com/citations?user=8200InoAAAAJ&hl=en">Max Welling</a> at the University of Amsterdam. I'm currently interested in physics-based ML for material discovery.
 								<br>
 								<br>
 								Previously, I was a Research Associate in the <a href="https://ri.cmu.edu">Robotics
@@ -168,12 +169,13 @@
 				<td>
 					<heading>What's new</heading>
 					<ul>
+						<li>Dec 2023: Update on two projects done while at CMU that are now under submission -- a new safety monitoring system for robots & a method to speed up differentiable bundle-adjustment training. </li>
 						<li>June 2023: My MS thesis at IIIT-H received the <a href="https://alumnifund.iiit.ac.in/giving/endowments/">Ritesh Tiwari Outstanding MS Thesis Award.</a></li>
 						<li>April 2023: I will be starting as an <a href="https://ellis.eu">ELLIS PhD</a> student at TUM in Fall '23.</li>
 						<li>Oct 2022: Our work on assistive indoor navigation at CMU was featured in <a href="https://www.youtube.com/watch?v=hvfV-iGwYX8&t=4262s">Meta Connect</a>.</li>
-						<li> June 2022: Our work on using map priors for inertial odometry got accepted for IROS. </li>
+						<li>June 2022: Our work on using map priors for inertial odometry was accepted for IROS. </li>
 						<li>Oct 2021: I started as a research associate at CMU RI.</li>
-						<li> June 2021: Our work on <a href="https://karnikram.info/rp-vio">RP-VIO</a> got accepted
+						<li>June 2021: Our work on <a href="https://karnikram.info/rp-vio">RP-VIO</a> was accepted
 							for IROS. </li>
 					</ul>
 				</td>
@@ -215,6 +217,31 @@
 							significant improvement over a state-of-the-art monocular VIO algorithm in dynamic
 							environments.</p>
 						<a href="https://karnikram.info/rp-vio/">Project page</a>
+
+					</td>
+				</tr>
+			</table>
+
+			<table class="compact" border="0" align="center" cellspacing="0" cellpadding="20">
+				<tr>
+					<td width="33%">
+						<a href="https://karnikram.info">
+							<img src='/images/v2v.png' style="width:218px;height:140px;" />
+						</a>
+					</td>
+					<td valign="top" width="67%">
+						<p>
+							<papertitle>From Variance to Veracity: Unbundling and Mitigating Gradient Variance in
+								Differentiable Bundle Adjustment Layers
+							</papertitle>
+							</a><br> <a href="https://swami1995.github.io/">Swaminathan Gurumurthy</a>, Karnik Ram, Bingqing Chen, Zachary Manchester, J Zico Kolter
+							<br>
+							<i>Under submission.</i>
+
+						<p align="justify"> Recent work leveraging learning-based optimizers to tightly-couple correspondence estimation
+							with a weighted least squares objective have shown SOTA results for various pose estimation tasks, but are still difficult to train.
+							We identify possible causes for this instability and propose a simple solution which leads to a 2-2.5x training speedup over a baseline visual odometry model we modify.</p>
+						<a href="https://karnikram.info/">Coming soon</a>
 
 					</td>
 				</tr>
@@ -339,13 +366,32 @@
 			<table class="compact" align="center" border="0" cellspacing="0" cellpadding="20">
 				<tr>
 					<td width="100%" valign="middle">
-						<heading>Projects</heading>
+						<heading>Selected projects</heading>
 					</td>
 				</tr>
 			</table>
 
-
 			<table class="compact" border="0" align="center" cellspacing="0" cellpadding="20">
+
+				<tr>
+					<td width="33%">
+						<div style="display:flex;justify-content:center;" >
+						<a href="https://www.youtube.com/watch?v=xFZ_9bAb43Q"><img src='/images/plc-safety.png' style="width:138px;height:180px;margin-left: auto;margin-right: auto;"/></a>
+						</div>
+					</td>
+					<td valign="top" width="67%">
+						<p>
+							<papertitle>Robot Safety Monitoring using Programmable Light Curtains</papertitle><br> Karnik Ram, Shobhit Aggarwal, Robert Tamburo, Siddharth Ancha, Srinivasa Narasimhan &nbsp;|&nbsp; Summer
+							2023
+						<p align="justify">
+							Developed an inexpensive safety monitoring system for industrials robots using <a href="https://www.cs.cmu.edu/~ILIM/light_curtains/">programmable light curtains</a>, a recently developed
+							controllable depth sensor. The system enables fence-less human-robot collaboration, is flexible and scales easily to many robots, all without compromising on safety.
+						</p>
+						<a href="https://cmu-mfi.github.io/plc-safety">Project page</a>
+					</td>
+				</tr>
+
+
 				<tr>
 					<td width="33%">
 						<div style="display:flex;justify-content:center;" >
@@ -407,7 +453,7 @@
 						<a href="https://www.artpark.in/robotChallenge">Challenge page</a>
 					</td>
 				</tr>
-			</table>
+			<!--</table>
 
 			<br><br>
 			<table class="compact" align="center" border="0" cellspacing="0" cellpadding="20">
@@ -461,7 +507,7 @@
 						<a href="https://github.com/karnikram/motion-calib">Code</a>
 
 					</td>
-				</tr>
+				</tr>-->
 
 				<tr>
 					<td width="33%">
@@ -488,7 +534,7 @@
 					</td>
 				</tr>
 
-				<tr>
+				<!--<tr>
 					<td width="33%">
 						<a href="/images/motioncap.png">
 							<img src='/images/motioncap.png' style="width:238px;height:140px;">
@@ -592,7 +638,7 @@
 						<a
 							href="http://www.thehindu.com/news/cities/chennai/food-travel-and-books-all-via-apps/article7740797.ece">Press</a><br>
 					</td>
-				</tr>
+				</tr>-->
 
 				<tr>
 					<td width="25%">
@@ -615,7 +661,8 @@
 						</p>
 						<a href="https://github.com/karnikram/the-ssn-app">Code</a> |
 						<a href="https://play.google.com/store/apps/details?id=in.edu.ssn.ssnapp">Store</a> |
-						<a href="/images/shivnadar.jpg"><span style='font-weight:normal;color:#3070B3;'>Appreciation</span></a>
+						<a href="/images/shivnadar.jpg"><span style='font-weight:normal;color:#3070B3;'>Appreciation</span></a> |
+						<a href="http://www.thehindu.com/features/downtown/students-engineer-an-innovation/article7386620.ece"><span style='font-weight:normal;color:#3070B3;'>Press</span></a>
 					</td>
 				</tr>
 
@@ -652,7 +699,7 @@
 										<br>
 									        <span style='font-weight:normal;'>Profile picture courtesy: <a href="https://nnsriram97.github.io/">Sriram</a></span>
 									        <br>
-										<span style='font-weight:normal;color:#3070B3;'>Last updated: Sept, 2023</span>
+										<span style='font-weight:normal;color:#3070B3;'>Last updated: Dec, 2023</span>
 									</font>
 								</p>
 							</td>
