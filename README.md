@@ -1,7 +1,1 @@
-My personal [website](karnikram.info), hosted using Github Pages.
-
-Built using [Hugo](http://gohugo.io).
-
-Index page mostly uses [Jon's](https://jonbarron.info/) styling.
-
-Blog is based on the [Cactus](https://github.com/digitalcraftsman/hugo-cactus-theme) theme.
+Based on styling from https://github.com/satnaing/astro-paper. Built using Cursor and Opus.
