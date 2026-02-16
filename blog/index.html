@@ -1,131 +1,158 @@
 <!DOCTYPE html>
-<style>
-    @media only screen and (max-device-width: 420px){
-        .navcompact{
-            width:100%;
-        }
-    }
-        
-    @media only screen and (min-device-width: 421px){
-       .navcompact{
-           width:60%;
-       }
-   } 
-</style>
+<html lang="en" data-theme="light">
 
-<html lang="en-us">
-	<head>
-    <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Karnik Ram">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blog | Karnik Ram</title>
+	<meta name="description" content="Blog posts by Karnik Ram.">
+	<meta name="robots" content="index,follow">
 
-<meta name="generator" content="Hugo 0.54.0" />
-<title>Blog</title>
-<link rel="shortcut icon" href="https://karnikram.info/images/favicon.ico">
-<link rel="stylesheet" href="https://karnikram.info/css/style.css">
-<link rel="stylesheet" href="https://karnikram.info/css/highlight.css">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108865845-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-108865845-1');
+	</script>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/main.css">
 
+	<script>
+		(function () {
+			const saved = localStorage.getItem('theme');
+			if (saved) {
+				document.documentElement.setAttribute('data-theme', saved);
+			} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-theme', 'dark');
+			}
+		})();
+	</script>
+</head>
 
-
-<meta property="og:title" content="Blog" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://karnikram.info/blog/" />
-
-<meta property="og:updated_time" content="2017-09-20T14:02:37&#43;02:00"/>
-
-
-
-<meta itemprop="name" content="Blog">
-<meta itemprop="description" content="">
-
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Blog"/>
-<meta name="twitter:description" content=""/>
-
-    </head>
 <body>
-    <table class="navcompact" border="0" align="center" cellspacing="9px" cellpadding="0">
-		<tr>
-			<td>
-					<nav class="main-nav">
-	
-		
-		<a href='https://karnikram.info'> About Me</a>
-	
+	<header>
+		<div class="container">
+			<a href="/" class="site-title home-icon" aria-label="Home"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></a>
+			<button id="menu-btn" aria-label="Open Menu" aria-expanded="false">
+				<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16" /><path d="M7 12h13" /><path d="M10 18h10" /></svg>
+				<svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+			</button>
+			<nav id="nav-menu">
+				<a href="/publications/">Publications</a>
+				<a href="/blog/" class="active">Blog</a>
+				<a href="/about/">About</a>
+				<span class="nav-theme-toggle">
+					<button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+						<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+						<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" /></svg>
+					</button>
+				</span>
+			</nav>
+		</div>
+	</header>
 
-	
-</nav>
-			</td>
-		</tr>
-		</table>
-    <section id="wrapper">
-        <div class="profile">
-    <section id="wrapper">
-        <header id="header">
-            <h1>Karnik Ram</h1>
-            <h2>Chronicles of Learning</h2>
-        </header>
-    </section>
-</div>
+	<main>
+		<div class="container">
+			<div class="page-header">
+				<h1>Blog</h1>
+			</div>
 
-        
-		<ul id="post-list">
+			<section class="section" style="padding-top: 0;">
+				<ul class="blog-list">
+					<li>
+						<a href="/blog/train-trip/">
+							<div class="post-date">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+								16 Sept, 2023
+							</div>
+							<h3>My cross-US train trip</h3>
+							<p class="post-desc">A solo trip to the west coast.</p>
+						</a>
+					</li>
+					<li>
+						<a href="/blog/notes-setup/">
+							<div class="post-date">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+								3 Jan, 2021
+							</div>
+							<h3>My note taking setup</h3>
+							<p class="post-desc">How I (try to) organise my notes for understanding, recall, and thinking.</p>
+						</a>
+					</li>
+					<li>
+						<a href="/blog/node-setup/">
+							<div class="post-date">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+								28 Jun, 2020
+							</div>
+							<h3>Setting up a server node</h3>
+							<p class="post-desc">A summary of the procedure involved in setting up a typical server node in a cluster.</p>
+						</a>
+					</li>
+					<li>
+						<a href="/blog/ethrss/">
+							<div class="post-date">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+								12 Jul, 2019
+							</div>
+							<h3>ETH Robotics Summer School</h3>
+							<p class="post-desc">A summary of my experience as a participant.</p>
+						</a>
+					</li>
+					<li>
+						<a href="/blog/gsoc-2018-progress/">
+							<div class="post-date">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+								12 Aug, 2018
+							</div>
+							<h3>Google Summer of Code with MRPT</h3>
+							<p class="post-desc">A summary of my experience with developing an open source GUI app for the extrinsic calibration of range and visual sensors.</p>
+						</a>
+					</li>
+					<li>
+						<a href="/blog/lie/">
+							<div class="post-date">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" /><path d="M16 3l0 4" /><path d="M8 3l0 4" /><path d="M4 11l16 0" /><path d="M8 15h2v2h-2l0 -2" /></svg>
+								3 Sep, 2017
+							</div>
+							<h3>Lie Groups and Lie Algebra</h3>
+							<p class="post-desc">Useful mathematical tool for optimization on manifolds.</p>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</main>
 
-        <li>
-            <a href='/blog/train-trip/'><aside class="dates">Sept 15 2023</aside></a>
-            <a href='/blog/train-trip/'>My cross-US train trip<h2>A solo trip to the west coast</h2></a>
-        </li>
-    
-        <li>
-            <a href='/blog/notes-setup/'><aside class="dates">Jan 3 2021</aside></a>
-            <a href='/blog/notes-setup/'>My note taking setup<h2>How I (try to) organise my notes for understanding, recall, and thinking</h2></a>
-        </li>
-    
-        <li>
-            <a href='/blog/node-setup/'><aside class="dates">Jun 28 2020</aside></a>
-            <a href='/blog/node-setup/'>Setting up a server node<h2>A summary of the procedure involved in setting up a typical server node in a cluster</h2></a>
-        </li>
-    
-        <li>
-            <a href='/blog/ethrss/'><aside class="dates">Jul 12 2019</aside></a>
-            <a href='/blog/ethrss/'>ETH Robotics Summer School<h2>A summary of my experience as a paricipant</h2></a>
-        </li>
-    
-        <li>
-            <a href='/blog/gsoc-2018-progress/'><aside class="dates">Aug 12 2018</aside></a>
-            <a href='/blog/gsoc-2018-progress/'>Google Summer of Code with MRPT<h2>A summary of my experience with developing an open source GUI app for the extrinsic calibration of range and visual sensors</h2></a>
-        </li>
-    
-        <li>
-            <a href='/blog/lie/'><aside class="dates">Sep 3 2017</aside></a>
-            <a href='/blog/lie/'>Lie Groups and Lie Algebra<h2>Useful mathematical tool for optimization on manifolds</h2></a>
-        </li>
-    
-</ul>
-        <nav id="post-nav">
-    
-</nav>
+	<footer>
+		<div class="container">
+			<hr>
+			<div class="footer-inner">
+				<div class="social-links">
+					<a href="mailto:karnikram@gmail.com" title="Send an email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg></a>
+					<a href="https://twitter.com/karnikram" title="Karnik Ram on X"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16l-4.267 0" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg></a>
+					<a href="https://github.com/karnikram" title="Karnik Ram on GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg></a>
+					<a href="https://www.linkedin.com/in/karnikram" title="Karnik Ram on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11v5" /><path d="M8 8v.01" /><path d="M12 16v-5" /><path d="M16 16v-3a2 2 0 1 0 -4 0" /><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10" /></svg></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
-
-        <footer id="footer" style="margin-top:100px;margin-bottom:100px;">
-        
-</footer>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"/>
-</script>
-    </section>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://karnikram.info/js/main.js"></script>
-<script src="https://karnikram.info/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-
+	<script>
+		const themeToggle = document.getElementById('theme-toggle');
+		const iconSun = themeToggle.querySelector('.icon-sun');
+		const iconMoon = themeToggle.querySelector('.icon-moon');
+		function applyThemeIcons(theme) { if (theme === 'dark') { iconSun.style.display = 'block'; iconMoon.style.display = 'none'; } else { iconSun.style.display = 'none'; iconMoon.style.display = 'block'; } }
+		applyThemeIcons(document.documentElement.getAttribute('data-theme') || 'light');
+		themeToggle.addEventListener('click', () => { const current = document.documentElement.getAttribute('data-theme'); const next = current === 'dark' ? 'light' : 'dark'; document.documentElement.setAttribute('data-theme', next); localStorage.setItem('theme', next); applyThemeIcons(next); });
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => { if (!localStorage.getItem('theme')) { const theme = e.matches ? 'dark' : 'light'; document.documentElement.setAttribute('data-theme', theme); applyThemeIcons(theme); } });
+		const menuBtn = document.getElementById('menu-btn'); const navMenu = document.getElementById('nav-menu'); const menuIcon = menuBtn.querySelector('.menu-icon'); const closeIcon = menuBtn.querySelector('.close-icon');
+		menuBtn.addEventListener('click', () => { const isOpen = menuBtn.getAttribute('aria-expanded') === 'true'; menuBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true'); menuBtn.setAttribute('aria-label', isOpen ? 'Open Menu' : 'Close Menu'); navMenu.classList.toggle('open'); menuIcon.style.display = isOpen ? 'block' : 'none'; closeIcon.style.display = isOpen ? 'none' : 'block'; });
+	</script>
 </body>
+
 </html>
