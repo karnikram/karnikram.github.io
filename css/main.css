@@ -541,6 +541,21 @@ footer .social-links svg {
   height: 18px;
 }
 
+footer .footer-credit {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  text-align: center;
+  margin-top: 0.25rem;
+}
+
+footer .footer-credit a {
+  color: var(--fg-muted);
+}
+
+footer .footer-credit a:hover {
+  color: var(--accent);
+}
+
 /* ===== Blog List ===== */
 .blog-list {
   list-style: none;
